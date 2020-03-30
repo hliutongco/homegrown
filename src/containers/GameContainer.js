@@ -1,26 +1,26 @@
-import React, {useState, useContext} from 'react';
+import React, {useContext} from 'react';
+import UpperContainer from './UpperContainer'
 import Script from '../components/Script';
 import {jackTableOfContents} from '../scripts/tableOfContents';
 import {ChapContext} from '../App';
 import '../stylesheets/GameContainer.scss';
+import {increaseLine} from '../actions';
+import {jackChapterTitles} from '../scripts/tableOfContents';
 
 export default function GameContainer() {
   const [state, dispatch] = useContext(ChapContext);
-  const [lineCounter, changeLine] = useState(0)
-  const [chapCounter, changeChap] = useState(1)
-  const chapLength = jackTableOfContents[chapCounter].length
-
-  const handleClick = () => {
-    changeLine(lineCounter + 1)
-    if(lineCounter > chapLength){
-      changeChap(chapCounter + 1)
-      changeLine(0)
-    }
+  const scriptObj = jackTableOfContents[state.chapter][state.line]
+  const chapterTitle = jackChapterTitles[state.chapter]
+  
+  const handleClick = () => {    
+    dispatch(increaseLine)
   }
 
   return (
     <div id="game-container" onClick={handleClick}>
-      <Script textObj={jackTableOfContents[chapCounter][lineCounter]}/>
+      <p>Chapter {state.chapter + 1}: {chapterTitle} <img src="/music-bars.gif" alt="music bars"/></p>
+      <UpperContainer id={`${state.chapter}${state.line}`} scriptObj={scriptObj}/>
+      <Script id={`${state.chapter}${state.line}`} text={scriptObj.text}/>
     </div>
   )
 }

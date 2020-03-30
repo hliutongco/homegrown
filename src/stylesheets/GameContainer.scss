@@ -1,4 +1,89 @@
+.thought, .quote {
+  position: relative;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.quote::before {
+  content: "\“";
+  line-height: 1;
+  font-size: calc(4em + 4vw);
+  position: absolute;
+  top: 5%; left: 3%;
+}
+
+.quote::after {
+  content: "\”";
+  line-height: 0;
+  font-size: calc(4em + 4vw);
+  position: absolute;
+  bottom: 5%; right: 3%;
+}
+
+.thought {
+  p {
+    font-style: italic;
+  }
+}
+
+.fade-in {
+  animation: fading-in 1s steps(40, end)
+}
+
+/* The typing effect */
+@keyframes fading-in {
+  from { opacity: 0 }
+  to { opacity: 100 }
+}
+
 #game-container {
+  font-family: 'Overpass', sans-serif;
   height: 100vh;
   width: 100vw;
+
+  > p {
+    font-family: 'Bebas Neue', cursive;
+    font-size: calc(0.6em + 0.6vw);
+    color: white;
+    position: fixed;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+
+    img {
+      height: calc(0.6em + 0.6vw);
+      margin-left: 5px;
+    }
+  }
+}
+
+#script {
+  border-top: 3px solid white;
+  height: calc(50% - 3px);
+
+  p {
+    margin: 2%;
+    height: 75%;
+    font-size: calc(0.7em + 1vw);
+  }
+}
+
+#upper-container {
+  height: 50%;
+  text-align: center;
+
+  p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 5% 15% 0 15%;
+    height: 60%;
+    width: 70%;
+    font-size: calc(0.7em + 1vw);
+  }
+
+  span {
+    font-size: calc(0.7em + 0.75vw);
+  }
 }
