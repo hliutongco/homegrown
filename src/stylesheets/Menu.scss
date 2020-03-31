@@ -1,0 +1,39 @@
+#menu {
+  height: 10vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  button {
+    margin-right: 2%;
+    min-width: 10%;
+    overflow-x: hidden;
+    text-overflow: ellipsis;
+    font-size: calc(0.7em + 0.7vw);
+    font-family: 'Overpass', sans-serif;
+    color: white;
+    background-color: black;
+    border: 2px solid white;
+    outline: none;
+    padding: 0.7% 1.5%;
+  }
+
+  button:hover, .clicked {
+    color: black;
+    background-color: white;
+  } 
+}
+
+.hidden {
+  display: none;
+}
+
+// .fake-padding {
+//   z-index: -972;
+//   margin: auto;
+// }
+
+// #menu-container {
+//   z-index: -972;
+//   display: flex;
+// }

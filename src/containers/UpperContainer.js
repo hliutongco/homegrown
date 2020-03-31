@@ -14,7 +14,7 @@ export default function UpperContainer({id, scriptObj}){
   }, [bg])
   
   return (
-    <div key={id} className={bg && bg !== ref.current ? "fade-in" : ""} style={bgStyling} id="upper-container">
+    <div className={bg && bg !== ref.current ? "fade-in" : ""} style={bgStyling} id="upper-container">
       <SecondaryScript text={text2} type={type} speaker={speaker}/>
     </div>
   )

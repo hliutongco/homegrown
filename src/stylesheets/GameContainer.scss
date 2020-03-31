@@ -38,7 +38,7 @@
 
 #game-container {
   font-family: 'Overpass', sans-serif;
-  height: 100vh;
+  height: 90vh;
   width: 100vw;
 
   > p {
@@ -60,6 +60,7 @@
 #script {
   border-top: 3px solid white;
   height: calc(50% - 3px);
+  overflow-y: scroll;
 
   p {
     margin: 2%;
