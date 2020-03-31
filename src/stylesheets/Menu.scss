@@ -6,9 +6,8 @@
   
   button {
     margin-right: 2%;
-    min-width: 10%;
+    width: 10%;
     overflow-x: hidden;
-    text-overflow: ellipsis;
     font-size: calc(0.7em + 0.7vw);
     font-family: 'Overpass', sans-serif;
     color: white;
@@ -24,16 +23,6 @@
   } 
 }
 
-.hidden {
+.hidden{
   display: none;
 }
-
-// .fake-padding {
-//   z-index: -972;
-//   margin: auto;
-// }
-
-// #menu-container {
-//   z-index: -972;
-//   display: flex;
-// }

@@ -3,7 +3,7 @@ import './stylesheets/App.scss';
 import GameContainer from './containers/GameContainer';
 import Menu from './components/Menu';
 import {jackTableOfContents} from './scripts/tableOfContents';
-import {increaseLine, decreaseLine, spaceBar} from './actions';
+import {increaseLine, decreaseLine, completeLine} from './actions';
 
 export const ChapContext = createContext()
 const initialState = {chapter: 0, line: 0, keycode: null}
@@ -39,8 +39,8 @@ const reducer = (state, action) => {
       return increaseLineHandler(state);
     case "decreaseLine":
       return decreaseLineHandler(state)
-    case "spaceBar":
-      return {...state,  keycode: "Space"}
+    case "completeLine":
+      return {...state,  keycode: "ArrowDown"}
     default:
       return state;
   }
@@ -54,8 +54,8 @@ const handleKeypress = (code, dispatch) => {
   else if(code === "ArrowLeft"){
     dispatch(decreaseLine)
   }
-  else if (code === "Space"){
-    dispatch(spaceBar)
+  else if (code === "ArrowDown"){
+    dispatch(completeLine)
   }
 }
 

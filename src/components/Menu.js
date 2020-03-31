@@ -2,18 +2,44 @@ import React, {useState} from 'react';
 import '../stylesheets/Menu.scss'
 
 export default function Menu(){
-  const [clicked, toggleClick] = useState(false)
+  let [counter, changeCounter] = useState(0)
+  let [intervalID, saveID] = useState(null)
+  let [menuState, changeMenuState] = useState("closed")
+
   const handleClick = () => {
-    toggleClick(!clicked)
+    if(intervalID) return;   
+    const interval = setInterval(() => {
+      if(menuState === "closed"){
+        changeCounter(counter++)
+        if(counter === 3){
+          saveID(null)
+          changeMenuState("opened")
+          clearInterval(interval)
+        }
+      }
+      else if(menuState === "opened"){
+        changeCounter(counter--)
+        if(counter === -1){
+          saveID(null)
+          changeMenuState("closed")
+          clearInterval(interval)
+        }
+      }
+    }, 35);
+    saveID(interval);
   }
-  const showButton = !clicked ? "hidden" : ""
+
+  const handleClassChange = (num) => {
+    return counter && counter >= num ? "" : "hidden"
+  }
+
   return (
     <div id="menu">
-      <button onClick={handleClick} className={clicked ? "clicked" : ""}>Menu</button>
-      <button className={showButton}>Save</button>
-      <button className={showButton}>Load</button>
-      <button className={showButton}>Chapters</button>
-      <button className={showButton}>Exit</button>
+      <button className={handleClassChange(2)}>Save</button>
+      <button className={handleClassChange(1)}>Load</button>
+      <button onClick={handleClick} className={menuState === "opened" ? "clicked" : ""}>Menu</button>
+      <button className={handleClassChange(1)}>List</button>
+      <button className={handleClassChange(2)}>Exit</button>
     </div>
   )
 }

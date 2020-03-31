@@ -6,6 +6,6 @@ export const decreaseLine = {
     type: "decreaseLine"
   }
 
-  export const spaceBar = {
-    type: "spaceBar"
+  export const completeLine = {
+    type: "completeLine"
   }
