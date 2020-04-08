@@ -20,7 +20,7 @@ export default function GameContainer() {
     <div id="game-container" onClick={handleClick}>
       <p>Chapter {state.chapter + 1}: {chapterTitle} <img src="/music-bars.gif" alt="music bars"/></p>
       <UpperContainer id={`${state.chapter}${state.line}`} scriptObj={scriptObj}/>
-      <Script id={`${state.chapter}${state.line}`} text={scriptObj.text} keycode={state.keycode}/>
+      <Script id={`${state.chapter}${state.line}`} text={scriptObj.text} transition={scriptObj.transition} keycode={state.keycode}/>
     </div>
   )
 }

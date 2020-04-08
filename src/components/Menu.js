@@ -21,11 +21,11 @@ export default function Menu(){
         changeCounter(counter--)
         if(counter === -1){
           saveID(null)
-          changeMenuState("closed")
+          changeMenuState("closed") 
           clearInterval(interval)
         }
       }
-    }, 35);
+    }, 50);
     saveID(interval);
   }
 

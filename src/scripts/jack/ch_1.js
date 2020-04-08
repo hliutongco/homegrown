@@ -164,5 +164,9 @@ module.exports = [
   },
   {
     text: "He re-tapped the remote's blue button and the window shuttered close."
+  },
+  {
+    transition: true,
+    text: "What most surprised Jack about Rhys's assistant was the familiarity of its design."
   }
 ]

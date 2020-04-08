@@ -1,20 +1,28 @@
 #menu {
+  // position: fixed;
+  // right: 0;
+  // bottom: 0;
   height: 10vh;
   display: flex;
   align-items: center;
   justify-content: center;
   
   button {
+    // margin-left: 3vw;
+    // width: auto;
     margin-right: 2%;
     width: 10%;
     overflow-x: hidden;
-    font-size: calc(0.7em + 0.7vw);
+    font-size: calc(0.5em + 0.7vw);
     font-family: 'Overpass', sans-serif;
     color: white;
     background-color: black;
+    // border: 2px solid white;
+    // border-bottom: none;
     border: 2px solid white;
     outline: none;
     padding: 0.7% 1.5%;
+    // padding: 1.5vh 4vw;
   }
 
   button:hover, .clicked {
