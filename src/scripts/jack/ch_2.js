@@ -1,5 +1,7 @@
 module.exports = [
   {
-    text: "Jack awoke from a shroudlike sleep, uncertain of time or place."
+    transition: true,
+    bg: null,
+    text: "The thing that no one, not even Angel, realized was that opening the vault cost Jack more than just his face."
   }
 ]
