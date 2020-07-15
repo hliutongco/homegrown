@@ -2,16 +2,16 @@ import React, {createContext, useEffect, useReducer} from 'react';
 import './stylesheets/App.scss';
 import GameContainer from './containers/GameContainer';
 import Menu from './components/Menu';
-import {jackTableOfContents} from './scripts/tableOfContents';
+import {tableOfContents} from './scripts/tableOfContents';
 import {increaseLine, decreaseLine, completeLine} from './actions';
 
 export const ChapContext = createContext()
 const initialState = {chapter: 0, line: 0, keycode: null}
 
 const increaseLineHandler = (state) => {
-  if(state.chapter === jackTableOfContents.length - 1) return state
+  if(state.chapter === tableOfContents.length - 1) return state
 
-  const chapLength = jackTableOfContents[state.chapter].length
+  const chapLength = tableOfContents[state.chapter].length
   const newObj = {...state, keycode: "ArrowRight"}
   const changeChap = {...newObj, chapter: state.chapter + 1, line: 0}
   const changeLine = {...newObj, line: state.line + 1}
@@ -25,7 +25,7 @@ const decreaseLineHandler = (state) => {
 
   if(!state.line && state.chapter) {
     const prevChap = state.chapter - 1
-    const lastLine = jackTableOfContents[prevChap].length - 1
+    const lastLine = tableOfContents[prevChap].length - 1
     return {...newObj, chapter: prevChap, line: lastLine}
   }
   else {

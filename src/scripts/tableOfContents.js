@@ -4,20 +4,20 @@ function importAll(result) {
   return chapters;
 }
 
-const chapters = importAll(require.context('./jack', false, /\.js/));
+const chapters = importAll(require.context('./chapters', false, /\.js/));
 
-const jackTableOfContents = [
+const tableOfContents = [
   chapters['ch_1.js'],
   chapters['ch_2.js'],
   chapters['ch_3.js'],
   chapters['ch_4.js']
 ];
 
-const jackChapterTitles = [
-  "ReBoot",
-  "ReImage",
-  "RePosition",
-  "ReWind"
+const chapterTitles = [
+  "ReWork",
+  "RePlay",
+  "ReVisit",
+  "ReMind"
 ]
 
-export {jackTableOfContents, jackChapterTitles};
+export {tableOfContents, chapterTitles};

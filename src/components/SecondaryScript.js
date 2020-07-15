@@ -1,9 +1,9 @@
 import React from 'react';
 
-export default function SecondaryScript({text = "", type, speaker}){
+export default function SecondaryScript({text = "", speaker}){
   
   return (
-    <div className={type}>
+    <div className={text && "quote"}>
       <p dangerouslySetInnerHTML={{__html: `<span>${text}</span>`}}></p>
       <span>{speaker && `— ${speaker} —`}</span>
     </div>

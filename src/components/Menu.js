@@ -35,11 +35,9 @@ export default function Menu(){
 
   return (
     <div id="menu">
-      <button className={handleClassChange(2)}>Save</button>
-      <button className={handleClassChange(1)}>Load</button>
+      <button className={handleClassChange(1)}>Skip</button>
       <button onClick={handleClick} className={menuState === "opened" ? "clicked" : ""}>Menu</button>
-      <button className={handleClassChange(1)}>List</button>
-      <button className={handleClassChange(2)}>Exit</button>
+      <button className={handleClassChange(1)}>Exit</button>
     </div>
   )
 }

@@ -1,4 +1,4 @@
-.thought, .quote {
+.quote {
   position: relative;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.3);
@@ -18,12 +18,6 @@
   font-size: calc(4em + 4vw);
   position: absolute;
   bottom: 5%; right: 3%;
-}
-
-.thought {
-  p {
-    font-style: italic;
-  }
 }
 
 .fade-in {
@@ -71,7 +65,7 @@
 }
 
 #upper-container {
-  height: 50%;
+  height: 60%;
   text-align: center;
 
   p {
