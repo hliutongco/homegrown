@@ -1,31 +1,39 @@
 module.exports = [
   {
-    text: "I’ve decided that my activity for today will be to make lemonade."
+    text: "I’ve decided that my activity for today will be to make lemonade.",
+    bg: null
   },
   {
-    text: "It’s mid-February in Silver Springs. We would typically be in the throes of winter, but the townspeople voted against having winter this year during the big meeting last June."
+    text: "It’s mid-February in Silver Springs. We would typically be in the throes of winter, but the townspeople voted against having winter this year during the big meeting last June.",
+    bg: "/town_day.jpg"
   },
   {
-    text: "Thus the temperature hovers at a balmy 75 degrees Fahrenheit all year-round. Perfect weather for lemonade."
+    text: "Thus the temperature hovers at a balmy 75 degrees Fahrenheit all year-round. Perfect weather for lemonade.",
+    bg: "/town_day.jpg"
   },
   {
-    text: "I take a bushel of lemons from the Farm and walk to the Community Center. Upon entering, I see that Daniel and Jackie have already set up their own activity station; it seems that their activity will be to give away homemade cookies."
+    text: "I take a bushel of lemons from the Farm and walk to the Community Center. Upon entering, I see that Daniel and Jackie have already set up their own activity station; it seems that their activity will be to give away homemade cookies.",
+    bg: "/town_day.jpg"
   },  
   {
-    text: "As always, Little Donny Brown is doing card tricks in a booth constructed of cardboard boxes and blankets. Greta, Harry, Stanley, and Ethel are all doing chair exercises in the far corner. Mark, who is nearest to me, is watching the news on the AR projector."
+    text: "As always, Little Donny Brown is doing card tricks in a booth constructed of cardboard boxes and blankets. Greta, Harry, Stanley, and Ethel are all doing chair exercises in the far corner. Mark, who is nearest to me, is watching the news on the AR projector.",
+    bg: "/town_day.jpg"
   },
   {
     text2: "Oh. Suzie.",
-    speaker: "Mark"
+    speaker: "Mark",
+    bg: "/town_day.jpg"
   },  
   {
     text2: "Oh. Suzie.",
     speaker: "Mark",
-    text: "Mark’s eyes widen as he spots my approach. His hand reaches for the projector’s off switch, but I stop him with a gentle touch to the shoulder."
+    text: "Mark’s eyes widen as he spots my approach. His hand reaches for the projector’s off switch, but I stop him with a gentle touch to the shoulder.",
+    bg: "/town_day.jpg"
   },
   {
     text2: "I don’t mind, Mark. Keep it on.",
-    speaker: "Suzie"
+    speaker: "Suzie",
+    bg: "/town_day.jpg"
   },
   {
     text: "At the bottom of the projection, the headline reads: ROGUE RX-0 MODEL CAUGHT AND PUBLICLY DISMANTLED. The parental controls must have flagged the broadcast for graphic content; the images are pixelated beyond recognition."

@@ -2,42 +2,45 @@ import React, {useState} from 'react';
 import '../stylesheets/Menu.scss'
 
 export default function Menu(){
-  let [counter, changeCounter] = useState(0)
-  let [intervalID, saveID] = useState(null)
-  let [menuState, changeMenuState] = useState("closed")
+  let [openMenu, toggleMenu] = useState(false)
+  let [pauseState, togglePause] = useState(false)
 
   const handleClick = () => {
-    if(intervalID) return;   
-    const interval = setInterval(() => {
-      if(menuState === "closed"){
-        changeCounter(counter++)
-        if(counter === 3){
-          saveID(null)
-          changeMenuState("opened")
-          clearInterval(interval)
-        }
-      }
-      else if(menuState === "opened"){
-        changeCounter(counter--)
-        if(counter === -1){
-          saveID(null)
-          changeMenuState("closed") 
-          clearInterval(interval)
-        }
-      }
-    }, 50);
-    saveID(interval);
+    toggleMenu(!openMenu)
   }
 
-  const handleClassChange = (num) => {
-    return counter && counter >= num ? "" : "hidden"
+  const handlePauseClick = () => {
+    togglePause(!pauseState)
   }
 
   return (
-    <div id="menu">
-      <button className={handleClassChange(1)}>Skip</button>
-      <button onClick={handleClick} className={menuState === "opened" ? "clicked" : ""}>Menu</button>
-      <button className={handleClassChange(1)}>Exit</button>
-    </div>
+    <>
+      <div className={openMenu ? "" : "hidden"}>
+        <div id="music-box">
+          <div>
+            <span id="music-controls" onClick={handlePauseClick} className={pauseState ? 'pause' : ''}>
+              {pauseState ? `►` : `❚❚` }
+            </span>
+            <span>
+              <h6>Fake Artist</h6>
+              Fake Title
+            </span>
+          </div>
+        </div>
+        <div id="controls" className={openMenu ? "" : "hidden"}>
+          <span>Controls</span>
+          <p>
+            Next — Right Arrow / Click<br/>
+            Previous — Left Arrow <br/>
+            Quick Complete — Down Arrow
+          </p>
+        </div> 
+      </div>
+      <div id="menu">
+        <button className={openMenu ? "" : "hidden"}>Skip</button>
+        <button onClick={handleClick} className={openMenu ? "clicked" : ""}>Menu</button>
+        <button className={openMenu ? "" : "hidden"}>Exit</button>
+      </div>
+    </>
   )
 }

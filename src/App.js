@@ -9,12 +9,12 @@ export const ChapContext = createContext()
 const initialState = {chapter: 0, line: 0, keycode: null}
 
 const increaseLineHandler = (state) => {
-  if(state.chapter === tableOfContents.length - 1) return state
-
   const chapLength = tableOfContents[state.chapter].length
   const newObj = {...state, keycode: "ArrowRight"}
-  const changeChap = {...newObj, chapter: state.chapter + 1, line: 0}
+  const newChapObj = {...newObj, chapter: state.chapter + 1, line: 0}
+  const changeChap = state.chapter + 1 < tableOfContents.length ? newChapObj : state
   const changeLine = {...newObj, line: state.line + 1}
+
   return state.line === chapLength - 1 ? changeChap : changeLine
 }
 
