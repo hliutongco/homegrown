@@ -1,31 +1,19 @@
 import React, {useState} from 'react';
+import MusicPlayer from './MusicPlayer'
 import '../stylesheets/Menu.scss'
 
 export default function Menu(){
   let [openMenu, toggleMenu] = useState(false)
-  let [pauseState, togglePause] = useState(false)
 
   const handleClick = () => {
     toggleMenu(!openMenu)
-  }
-
-  const handlePauseClick = () => {
-    togglePause(!pauseState)
   }
 
   return (
     <>
       <div className={openMenu ? "" : "hidden"}>
         <div id="music-box">
-          <div>
-            <span id="music-controls" onClick={handlePauseClick} className={pauseState ? 'pause' : ''}>
-              {pauseState ? `►` : `❚❚` }
-            </span>
-            <span>
-              <h6>Fake Artist</h6>
-              Fake Title
-            </span>
-          </div>
+          <MusicPlayer/>
         </div>
         <div id="controls" className={openMenu ? "" : "hidden"}>
           <span>Controls</span>

@@ -75,7 +75,7 @@ module.exports = [
     text: "I begin to set up my activity station. I realize that I forgot to get sugar and plastic cups, so I send in an order on my phone."
   },
   {
-    text: "The lemons still need to be cut, which I don’t really want to do today, so I might tell the delivery bot to cut them instead. Mark stands beside me.",
+    text: "The lemons still need to be cut, which I don’t really want to do today, so I might tell the delivery bot to cut them instead.",
     bg: "/lemons.jpg"
   }, 
   {
