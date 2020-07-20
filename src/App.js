@@ -1,76 +1,30 @@
-import React, {createContext, useEffect, useReducer} from 'react';
+import React, {useState, createContext} from 'react';
 import './stylesheets/App.scss';
-import GameContainer from './containers/GameContainer';
-import Menu from './components/Menu';
-import {tableOfContents} from './scripts/tableOfContents';
-import {increaseLine, decreaseLine, completeLine} from './actions';
-
-export const ChapContext = createContext()
-const initialState = {chapter: 0, line: 0, keycode: null}
-
-const increaseLineHandler = (state) => {
-  const chapLength = tableOfContents[state.chapter].length
-  const newObj = {...state, keycode: "ArrowRight"}
-  const newChapObj = {...newObj, chapter: state.chapter + 1, line: 0}
-  const changeChap = state.chapter + 1 < tableOfContents.length ? newChapObj : state
-  const changeLine = {...newObj, line: state.line + 1}
-
-  return state.line === chapLength - 1 ? changeChap : changeLine
-}
-
-const decreaseLineHandler = (state) => {
-  if(!state.line && !state.chapter) return state
-
-  const newObj = {...state, keycode: "ArrowLeft"}
-
-  if(!state.line && state.chapter) {
-    const prevChap = state.chapter - 1
-    const lastLine = tableOfContents[prevChap].length - 1
-    return {...newObj, chapter: prevChap, line: lastLine}
-  }
-  else {
-    return {...newObj, line: state.line - 1}
-  }
-}
-
-const reducer = (state, action) => {
-  switch(action.type){
-    case "increaseLine":
-      return increaseLineHandler(state);
-    case "decreaseLine":
-      return decreaseLineHandler(state)
-    case "completeLine":
-      return {...state,  keycode: "ArrowDown"}
-    default:
-      return state;
-  }
-}
-
-const handleKeypress = (code, dispatch) => {
-
-  if(code === "ArrowRight"){
-    dispatch(increaseLine)
-  }
-  else if(code === "ArrowLeft"){
-    dispatch(decreaseLine)
-  }
-  else if (code === "ArrowDown"){
-    dispatch(completeLine)
-  }
-}
+import AppContainer from './containers/AppContainer';
+export const MenuContext = createContext()
 
 function App() {
-  const [state, dispatch] = useReducer(reducer, initialState)
+  let [displayGame, toggleDisplay] = useState(false)
   
-  useEffect(() => {
-    document.addEventListener('keyup', (event) => handleKeypress(event.code, dispatch))
-  }, []);
-
+  const menu = (
+    <div className="app">
+      <h1>Homegrown</h1>
+      <p>a tale of (in)organic people</p>
+      <button onClick={() => toggleDisplay(true)}>Start</button>
+    </div>
+  )
   return (
-    <ChapContext.Provider value={[state, dispatch]}>
-      <GameContainer/>
-      <Menu/>
-    </ChapContext.Provider>
+    <>
+      {
+        displayGame 
+        ? 
+        <MenuContext.Provider value={toggleDisplay}>
+          <AppContainer/>
+        </MenuContext.Provider>
+        : 
+        menu
+      }
+    </>
   );
 }
 

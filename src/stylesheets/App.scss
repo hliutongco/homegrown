@@ -1,7 +1,9 @@
 @import url('https://fonts.googleapis.com/css?family=Overpass&display=swap');
 @import url('https://fonts.googleapis.com/css?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
 
 body {
+  font-family: 'Overpass', sans-serif;
   background-color: black;
   color: white;
   margin: 0;
@@ -11,4 +13,41 @@ body {
    -khtml-user-select: none; /* Konqueror HTML */
      -moz-user-select: none; /* Old versions of Firefox */
       -ms-user-select: none; /* Internet Explorer/Edge */
+}
+
+h1 {
+  font-family: 'Permanent Marker', cursive;
+  font-size: calc(1em + 5em);
+}
+
+h2 {
+  font-size: calc(1em + 1.5em);
+}
+
+button {
+  cursor: pointer;
+  width: 10%;
+  overflow-x: hidden;
+  font-size: calc(0.5em + 0.7vw);
+  color: white;
+  line-height: 1.6;
+  background-color: black;
+  border: 2px solid white;
+  outline: none;
+  padding: 0.7% 1.5%;
+}
+
+button:hover, .clicked {
+  color: black;
+  background-color: white;
+} 
+
+.app {
+  margin-top: 20vh;
+  text-align: center;
+}
+
+.divider {
+  width: 1vw;
+  display: inline-block;
 }

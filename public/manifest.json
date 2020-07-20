@@ -1,9 +1,9 @@
 {
-  "short_name": "ftgwale",
-  "name": "For the Garden Where All Love Ends",
+  "short_name": "homegrown",
+  "name": "Homegrown",
   "icons": [
     {
-      "src": "favicon.ico",
+      "src": "lemon.gif",
       "sizes": "64x64 32x32 24x24 16x16",
       "type": "image/x-icon"
     },

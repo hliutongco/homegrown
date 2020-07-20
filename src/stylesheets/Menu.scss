@@ -11,30 +11,35 @@
   justify-content: center;
 }
 
-#menu {
+#menu-container {
   height: 10vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  
-  button {
-    cursor: pointer;
-    margin-right: 2%;
-    width: 10%;
-    overflow-x: hidden;
-    font-size: calc(0.5em + 0.7vw);
-    font-family: 'Overpass', sans-serif;
-    color: white;
-    background-color: black;
-    border: 2px solid white;
-    outline: none;
-    padding: 0.7% 1.5%;
-  }
+}
 
-  button:hover, .clicked {
-    color: black;
-    background-color: white;
-  } 
+#menu {
+  display: flex;
+  justify-content: center;
+}
+
+#menu-instructions {
+  position: absolute;
+  bottom: 11vh; left: 40vw;
+  text-align: center;
+  width: 20vw;
+
+}
+
+.blinking{
+  animation:blinkingText 1.4s infinite;
+}
+
+@keyframes blinkingText{
+  0%{     color: #fff;    }
+  18%{    color: rgb(167, 167, 167); }
+  34%{    color: rgb(73, 73, 73); }
+  50%{    color:#000;  }
+  66%{    color: rgb(73, 73, 73); }
+  82%{    color: rgb(167, 167, 167);  }
+  100%{   color: #fff;    }
 }
 
 #controls {
@@ -43,7 +48,6 @@
   position: fixed;
   bottom: 0.6em; right: 1vw;
   text-align: right;
-  color: #fff;
 
   span {
     text-decoration: underline;
@@ -61,7 +65,6 @@
     position: fixed;
     bottom: 0.6em; left: 1vw;
     text-align: left;
-    color: #fff;
     display: flex;
 
     #replay-btn, #skip-btn {

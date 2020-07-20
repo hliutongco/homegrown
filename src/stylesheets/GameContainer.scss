@@ -31,14 +31,12 @@
 }
 
 #game-container {
-  font-family: 'Overpass', sans-serif;
   height: 90vh;
   width: 100vw;
 
   > p {
     font-family: 'Bebas Neue', cursive;
     font-size: calc(0.6em + 0.6vw);
-    color: white;
     position: fixed;
     left: 50%;
     transform: translateX(-50%);

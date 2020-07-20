@@ -1,9 +1,19 @@
 import React from 'react';
+import '../stylesheets/Modal.scss'
 
-export default function Modal({body}) {
+export default function Modal({body, toggleOpen, handleSubmit}) {
   return (
     <div id="modal">
-      {body}
+      <div className="modal-inner">
+        <div className="body">
+          {body}
+        </div>
+        <div className="footer">
+          <button onClick={handleSubmit}>Continue</button>
+          <span className="divider"></span>
+          <button onClick={() => toggleOpen(false)}>Cancel</button>
+        </div>
+      </div>
     </div>
   )
 }

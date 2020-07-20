@@ -2,7 +2,7 @@ import React, {useContext} from 'react';
 import UpperContainer from './UpperContainer'
 import Script from '../components/Script';
 import {tableOfContents} from '../scripts/tableOfContents';
-import {ChapContext} from '../App';
+import {ChapContext} from './AppContainer';
 import '../stylesheets/GameContainer.scss';
 import {increaseLine} from '../actions';
 import {chapterTitles} from '../scripts/tableOfContents';
