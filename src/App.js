@@ -9,7 +9,7 @@ function App() {
   const menu = (
     <div className="app">
       <h1>Homegrown</h1>
-      <p>a tale of (in)organic people</p>
+      <p>an audio/visual tale of (in)organic people</p>
       <button onClick={() => toggleDisplay(true)}>Start</button>
     </div>
   )

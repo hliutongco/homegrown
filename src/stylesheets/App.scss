@@ -18,6 +18,10 @@ body {
 h1 {
   font-family: 'Permanent Marker', cursive;
   font-size: calc(1em + 5em);
+
+  @media only screen and (max-width: 576px) {
+    font-size: calc(1em + 1.5em);
+  }
 }
 
 h2 {
@@ -35,6 +39,11 @@ button {
   border: 2px solid white;
   outline: none;
   padding: 0.7% 1.5%;
+
+  @media only screen and (max-width: 576px) {
+    width: 20%;
+    line-height: 3;
+  }
 }
 
 button:hover, .clicked {
@@ -45,6 +54,12 @@ button:hover, .clicked {
 .app {
   margin-top: 20vh;
   text-align: center;
+
+  p {
+    @media only screen and (max-width: 576px) {
+      font-size: calc(0.3em + 0.5em);
+    }
+  }
 }
 
 .divider {

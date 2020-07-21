@@ -52,11 +52,10 @@
 #script {
   border-top: 3px solid white;
   height: calc(50% - 3px);
-  overflow-y: scroll;
+  overflow-y: hidden;
 
   p {
     margin: 2%;
-    height: 75%;
     font-size: calc(0.65em + 1.5vw);
   }
 }
