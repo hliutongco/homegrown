@@ -9,10 +9,32 @@
   margin-right: 0.5em;
   text-align: center;
   justify-content: center;
+
+  @media only screen and (max-width: 1200px) {
+    height: calc(1.2em + 1.5em);
+    width: calc(1.2em + 1.5em);
+    line-height: 4;
+  }
+
+  @media only screen and (max-width: 600px) {
+    height: calc(1.2em + 1.2em);
+    width: calc(1.5em + 1.5em);
+    line-height: 2.25;
+  }
+  
+  @media only screen and (max-width: 340px) {
+    height: calc(1em + 1.3em);
+    width: calc(1.3em + 1.3em);
+    line-height: 2.25;
+  }
 }
 
 #menu-container {
   height: 10vh;
+
+  @media only screen and (max-width: 1200px) {
+    height: 20vh;
+  }
 }
 
 #menu {
@@ -20,6 +42,10 @@
   height: 10vh;
   align-items: center;
   justify-content: center;
+
+  @media only screen and (max-width: 1200px) {
+    height: 30vh;
+  }
 }
 
 #menu-instructions {
@@ -28,6 +54,17 @@
   text-align: center;
   width: 20vw;
 
+  @media only screen and (max-width: 1200px) {
+    width: 80vw;
+    bottom: 20vh; left: 10vw;
+    font-size: calc(0.5em + 0.5em);
+  }
+
+  @media only screen and (max-width: 600px) {
+    width: 80vw;
+    bottom: 20vh; left: 10vw;
+    font-size: calc(0.5em + 0.3em);
+  }
 }
 
 .blinking{
@@ -51,6 +88,18 @@
   bottom: 0.6em; right: 1vw;
   text-align: right;
 
+  @media only screen and (max-width: 1200px) {
+    font-size: calc(0.8em + 0.6vw);
+  }
+
+  @media only screen and (max-width: 600px) {
+    font-size: calc(0.7em + 0.6vw);
+  }
+
+  @media only screen and (max-width: 340px) {
+    font-size: calc(0.6em + 0.6vw);
+  }
+
   span {
     text-decoration: underline;
   }
@@ -61,13 +110,52 @@
 }
 
 #music-box {
-  div {
+  .player-container {
     font-family: 'Bebas Neue', cursive;
     font-size: calc(0.5em + 0.6vw);
     position: fixed;
     bottom: 0.6em; left: 1vw;
     text-align: left;
     display: flex;
+    
+    div {
+      display: flex;
+    }
+    
+    .artist {
+      text-decoration: none;
+    }
+
+    @media only screen and (max-width: 1200px) {
+      font-size: calc(0.8em + 0.6vw);
+
+      span {
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+      }
+    }
+  
+    @media only screen and (max-width: 600px) {
+      font-size: calc(0.7em + 0.6vw);
+      display: flex;
+      flex-direction: column;
+
+      span {
+        flex-direction: row;
+        padding-top: 5px;
+        justify-content: flex-start;
+        
+
+        .artist::before {
+          content: " — ";
+        }
+      }
+    }
+
+    @media only screen and (max-width: 600px) {
+      font-size: calc(0.6em + 0.6vw);
+    }
 
     #replay-btn, #skip-btn {
       @include btn-style;

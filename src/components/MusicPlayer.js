@@ -32,19 +32,21 @@ export default function MusicPlayer(){
   const currentSong = audioArray[audioIndex];
 
   return (
-    <div>
-      <span id="replay-btn" onClick={() => handleAudioChange(audioIndex - 1)} className={pauseState ? 'disabled' : ''}>
-        ⇤
-      </span>
-      <span id="music-controls" onClick={handleTogglePause} className={pauseState ? 'pause' : ''}>
-        {pauseState ? `►` : `❚❚` }
-      </span>
-      <span id="skip-btn" onClick={() => handleAudioChange(audioIndex + 1)} className={pauseState ? 'disabled' : ''}>
-        ⇥
-      </span>
+    <div className="player-container">
+      <div>
+        <span id="replay-btn" onClick={() => handleAudioChange(audioIndex - 1)} className={pauseState ? 'disabled' : ''}>
+          ⇤
+        </span>
+        <span id="music-controls" onClick={handleTogglePause} className={pauseState ? 'pause' : ''}>
+          {pauseState ? `►` : `❚❚` }
+        </span>
+        <span id="skip-btn" onClick={() => handleAudioChange(audioIndex + 1)} className={pauseState ? 'disabled' : ''}>
+          ⇥
+        </span>
+      </div>
       <span>
         <h6>{currentSong.title}</h6>
-        {currentSong.artist}
+        <h6 className="artist">{currentSong.artist}</h6>
       </span>
       <audio
         ref={audioPlayer}
