@@ -1,7 +1,6 @@
 module.exports = [
   {
-    text: "I’ve decided that my activity for today will be to make lemonade.",
-    bg: null
+    text: "I’ve decided that my activity for today will be to make lemonade."
   },
   {
     text: "It’s mid-February in Silver Springs. We would typically be in the throes of winter, but the townspeople voted against having winter this year during the big meeting last June.",
@@ -53,7 +52,12 @@ module.exports = [
     bg: "/community-center.jpeg"
   }, 
   {
-    text2: "I suppose it is. But bots like that were made to do work. The <em>real</em> work, that is. Besides, I heard that this one hurt some poor woman as it fled. If it’s dangerous, then of course it deserves to be dismantled.",
+    text2: "I suppose it is. But bots like that were made to do work. The <em>real</em> work, that is.",
+    speaker: "Suzie",
+    bg: "/community-center.jpeg"
+  },  
+  {
+    text2: "Besides, I heard that this one hurt some poor woman as it fled. If it’s dangerous, then of course it deserves to be dismantled.",
     speaker: "Suzie",
     bg: "/community-center.jpeg"
   },
@@ -113,27 +117,25 @@ module.exports = [
     bg: "/community-center.jpeg"
   },
   {
-    text: "The delivery bot arrives. It’s an A-1 model and an old one at that, it’s once-sleek chrome now faded with age. It’s just tall enough to reach the lemons on the table, and so I order it to cut the lemons with a pocket knife. Its blunt edge makes a dull thunk each time it meets the wooden tabletop.",
-    bg: null
+    text: "The delivery bot arrives. It’s an A-1 model and an old one at that, it’s once-sleek chrome now faded with age."
   },
   {
-    text: "I make a cup of lemonade for Mark, and then one each for Daniel and Jackie. Little Donny Brown requests extra sugar in his. A steady trickle of visitors begin to make their way through, some to find an activity to work on and others to simply browse.",
-    bg: null
+    text: "It’s just tall enough to reach the lemons on the table, and so I order it to cut the lemons with a pocket knife. Its blunt edge makes a dull thunk each time it meets the wooden tabletop."
+  },
+  {
+    text: "I make a cup of lemonade for Mark, and then one each for Daniel and Jackie. Little Donny Brown requests extra sugar in his. A steady trickle of visitors begin to make their way through, some to find an activity to work on and others to simply browse."
   },
   {
     text2: "How long are you planning to be here?",
-    speaker: "Mark",
-    bg: null
+    speaker: "Mark"
   },
   {
-    text: "I shrug.",
-    bg: null
+    text: "I shrug."
   },
   {
     text2: "I am getting a bit tired. Maybe I’ll stop soon. After all, I could just leave these lemons out for anyone who wants them.",
     speaker: "Suzie",
-    text: "I shrug.",
-    bg: null
+    text: "I shrug."
   },
   {
     text: "I tell the A-1 bot to clean up the used lemons and cups, and then Mark and I head outside. We walk to Mark’s place on Parkway Lane.",
@@ -144,7 +146,10 @@ module.exports = [
     bg: "/small-town.jpg"
   },
   {
-    text: "The logos stamped across their broad backs give hints as to their origins: most were manufactured in China, Taiwan, or Mexico. I look away.",
+    text: "The logos stamped across their broad backs give hints as to their origins: most were manufactured in China, Taiwan, or Mexico.",
     bg: "/small-town.jpg"
+  },
+  {
+    text: "I look away."
   }
 ]

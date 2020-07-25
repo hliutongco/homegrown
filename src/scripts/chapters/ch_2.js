@@ -1,7 +1,6 @@
 module.exports = [
   {
     transition: true,
-    bg: null,
     text: "Mark’s apartment is … I suppose the word that best describes it is ‘quaint.’"
   },
   {
@@ -13,16 +12,13 @@ module.exports = [
     bg: "/apartment.jpg"
   },
   {
-    text: "Something strange happens, in the middle of it. Mark is on top, moving inside me, when suddenly he stops. His eyes are dilated but unblinking. He is no longer breathing.",
-    bg: null
+    text: "Something strange happens, in the middle of it. Mark is on top, moving inside me, when suddenly he stops. His eyes are dilated but unblinking. He is no longer breathing."
   },  
   {
-    text: "Is he dead, I wonder.",
-    bg: null
+    text: "Is he dead, I wonder."
   },  
   {
-    text: "No, it is almost as though he is frozen. Is there a sickness or disease that freezes people? I can’t think of any.",
-    bg: null
+    text: "No, it is almost as though he is frozen. Is there a sickness or disease that freezes people? I can’t think of any."
   },
   {
     text: "I crawl out from beneath him. Mark doesn’t react. I feel a sudden, creeping dread as I realize what this is. What he is.",
@@ -33,7 +29,11 @@ module.exports = [
     bg: "/apartment.jpg"
   },
   {
-    text: "At first, he looks confused. Then he stares into my face, and he looks scared. He wraps the sheet around his body. His reserve energy won’t last him very long, but he makes no attempt to find his charger, wherever it’s hidden. Does he have a dead battery? Did he forget to charge it?",
+    text: "At first, he looks confused. Then he stares into my face, and he looks scared.",
+    bg: "/apartment.jpg"
+  },  
+  {
+    text: "He wraps the sheet around his body. His reserve energy won’t last him very long, but he makes no attempt to find his charger, wherever it’s hidden. Does he have a dead battery? Did he forget to charge it?",
     bg: "/apartment.jpg"
   },
   {
@@ -82,7 +82,6 @@ module.exports = [
     bg: "/apartment.jpg"
   },
   {
-    bg: null,
     text: "The door shuts behind me with a click."
   }
     

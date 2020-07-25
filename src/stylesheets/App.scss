@@ -4,6 +4,7 @@
 
 body {
   overflow-y: hidden;
+  overflow-x: hidden;
   font-family: 'Overpass', sans-serif;
   background-color: black;
   color: white;
@@ -17,7 +18,7 @@ body {
 }
 
 h1 {
-  padding-top: 20%;
+  padding-top: 10%;
   margin: 0;
   font-family: 'Permanent Marker', cursive;
   font-size: calc(2em + 5em);
@@ -60,10 +61,24 @@ button {
   }
 }
 
-button:hover, .clicked {
+.clicked {
   color: black;
   background-color: white;
 } 
+
+button:hover {
+  @media only screen and (min-width: 600px) {
+    color: black;
+    background-color: white;
+  }
+}
+
+.unclicked {
+  @media only screen and (max-width: 1200px) {
+    position: absolute;
+    bottom: 5%;
+  }  
+}
 
 .main-menu {
   text-align: center;

@@ -33,15 +33,15 @@ export default function MusicPlayer(){
 
   return (
     <div className="player-container">
-      <div>
-        <span id="replay-btn" onClick={() => handleAudioChange(audioIndex - 1)} className={pauseState ? 'disabled' : ''}>
-          ⇤
+      <div className="btn-container">
+        <span onClick={() => handleAudioChange(audioIndex - 1)} className={pauseState ? 'disabled' : ''}>
+          ⇦
         </span>
         <span id="music-controls" onClick={handleTogglePause} className={pauseState ? 'pause' : ''}>
-          {pauseState ? `►` : `❚❚` }
+          {pauseState ? `➤` : `❚❚` }
         </span>
-        <span id="skip-btn" onClick={() => handleAudioChange(audioIndex + 1)} className={pauseState ? 'disabled' : ''}>
-          ⇥
+        <span onClick={() => handleAudioChange(audioIndex + 1)} className={pauseState ? 'disabled' : ''}>
+          ⇨
         </span>
       </div>
       <span>

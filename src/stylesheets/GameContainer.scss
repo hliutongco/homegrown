@@ -1,7 +1,7 @@
 .quote {
   position: relative;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.3);
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 .quote::before {
@@ -31,7 +31,7 @@
 }
 
 #game-container {
-  height: 90vh;
+  height: 85vh;
   width: 100vw;
 
   @media only screen and (max-width: 1200px) {
@@ -41,6 +41,7 @@
   > p {
     font-family: 'Bebas Neue', cursive;
     font-size: calc(0.6em + 0.6vw);
+    text-shadow: 1px 1px rgba(0, 0, 0, 0.3);
     position: fixed;
     left: 50%;
     transform: translateX(-50%);

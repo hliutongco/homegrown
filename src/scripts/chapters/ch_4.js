@@ -22,7 +22,17 @@ module.exports = [
     bg: "/stars.jpg"
   },
   {
-    text2: "I’m not like Jenny or any of the worker bots. I was made in America. My creator built me by hand, in a small lab in Alabama. I was created to be his companion, which I was until he passed. I wasn’t made to do labor. I didn’t do anything wrong.",
+    text2: "I’m not like Jenny or any of the worker bots. I was made in America.",
+    speaker: "Suzie",
+    bg: "/stars.jpg"
+  },  
+  {
+    text2: "My creator built me by hand, in a small lab in Alabama. I was created to be his companion, which I was until he passed.",
+    speaker: "Suzie",
+    bg: "/stars.jpg"
+  },  
+  {
+    text2: "I wasn’t made to do labor. I didn’t do anything wrong.",
     speaker: "Suzie",
     bg: "/stars.jpg"
   },
@@ -31,7 +41,13 @@ module.exports = [
     bg: "/stars.jpg"
   },
   {
-    text2: "That may be the case. But we can’t take any risks anymore. There are rogue bot attacks all over the country now, and the death toll seems to be growing every year. That’s our reality. We all have a place in this world, and it’s our job to know what it is.",
+    text2: "That may be the case. But we can’t take any risks anymore. There are rogue bot attacks all over the country now, and the death toll seems to be growing every year.",
+    speaker: "Daniel",
+    text: "Daniel doesn’t look at me. His voice is a low, steady rumble.",
+    bg: "/stars.jpg"
+  },  
+  {
+    text2: "That’s our reality. We all have a place in this world, and it’s our job to know what it is.",
     speaker: "Daniel",
     text: "Daniel doesn’t look at me. His voice is a low, steady rumble.",
     bg: "/stars.jpg"
@@ -65,23 +81,18 @@ module.exports = [
     bg: "/stars.jpg"
   },
   {
-    text: "I observe Silver Springs from my perch. When my reserve energy runs out, Daniel gives me a fresh battery so that I will live a few years longer. Despite everything, I feel grateful.",
-    bg: null
+    text: "I observe Silver Springs from my perch. When my reserve energy runs out, Daniel gives me a fresh battery so that I will live a few years longer. Despite everything, I feel grateful."
   },
   {
-    text: "On most days, no one comes to visit, and those who do usually just stare up at me, wordlessly. One time, Mark passed through the square, but he purposefully avoided looking at me. But I don’t blame him. I would do the same.",
-    bg: null
+    text: "On most days, no one comes to visit, and those who do usually just stare up at me, wordlessly. One time, Mark passed through the square, but he purposefully avoided looking at me. But I don’t blame him. I would do the same."
   },
   {
-    text: "Eventually, it dawns on me that the worst part of this is Jenny. Always Jenny. This would be so much more bearable if she weren’t around, rotting right in front of me. Once when Daniel passed by, I pleaded with him to lower her body even just a foot towards the ground, but he didn’t listen.",
-    bg: null
+    text: "Eventually, it dawns on me that the worst part of this is Jenny. Always Jenny. This would be so much more bearable if she weren’t around, rotting right in front of me. Once when Daniel passed by, I pleaded with him to lower her body even just a foot towards the ground, but he didn’t listen."
   },
   {
-    text: "Why did he put me right across from her, and at the same height no less? My body is made from much higher quality materials, but the differences are more difficult to see from this height. It isn’t fair. I hate to think that the townspeople might consider us equals. I am different from her.",
-    bg: null
+    text: "Why did he put me right across from her, and at the same height no less? My body is made from much higher quality materials, but the differences are more difficult to see from this height. It isn’t fair. I hate to think that the townspeople might consider us equals. I am different from her."
   },
   {
-    text: "We are not the same.",
-    bg: null
+    text: "We are not the same."
   }
 ]

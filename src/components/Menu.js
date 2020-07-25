@@ -22,12 +22,12 @@ export default function Menu(){
 
   return (
     <>
-      <div id="menu-instructions" className={showInstructions ? "blinking" : "hidden"}>click to expand/collapse menu</div>
+      <div id="menu-instructions" className={showInstructions ? "blinking" : "hidden"}>click above to expand/collapse menu</div>
       <div id="menu-container">
         <div id="menu">
           <button className={openMenu ? "" : "hidden"}>Skip</button>
           <span className="divider"></span>
-          <button onClick={handleClick} className={openMenu ? "clicked" : ""}>Menu</button>
+          <button onClick={handleClick} className={openMenu ? "clicked" : "unclicked"}>Menu</button>
           <span className="divider"></span>
           <button onClick={() => toggleExitModal(true)} className={openMenu ? "" : "hidden"}>Exit</button>
         </div>
