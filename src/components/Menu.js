@@ -22,27 +22,25 @@ export default function Menu(){
 
   return (
     <>
-      <div className={openMenu ? "" : "hidden"}>
-        <div id="music-box">
-          <MusicPlayer/>
-        </div>
-        <div id="controls">
-          <span>Controls</span>
-          <p>
-            Next — Right Arrow / Click<br/>
-            Previous — Left Arrow <br/>
-            Quick Complete — Down Arrow
-          </p>
-        </div> 
-      </div>
+      <div id="menu-instructions" className={showInstructions ? "blinking" : "hidden"}>click to expand/collapse menu</div>
       <div id="menu-container">
-        <div id="menu-instructions" className={showInstructions ? "blinking" : "hidden"}>click to expand/collapse menu</div>
         <div id="menu">
           <button className={openMenu ? "" : "hidden"}>Skip</button>
           <span className="divider"></span>
           <button onClick={handleClick} className={openMenu ? "clicked" : ""}>Menu</button>
           <span className="divider"></span>
           <button onClick={() => toggleExitModal(true)} className={openMenu ? "" : "hidden"}>Exit</button>
+        </div>
+        <div className={openMenu ? "open-menu" : "hidden"}>
+          <MusicPlayer/>
+          <div id="controls">
+            <span>Controls</span>
+            <p>
+              Next — Right Arrow / Click<br/>
+              Previous — Left Arrow <br/>
+              Quick Complete — Down Arrow
+            </p>
+          </div> 
         </div>
       </div>
       {showExitModal ? <Modal body={exitBody} toggleOpen={toggleExitModal} handleSubmit={() => toggleDisplay(false)} /> : ""}

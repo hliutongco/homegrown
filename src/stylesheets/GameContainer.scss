@@ -35,7 +35,7 @@
   width: 100vw;
 
   @media only screen and (max-width: 1200px) {
-    height: 70vh;
+    height: 80%;
   }
 
   > p {
@@ -58,6 +58,10 @@
   height: calc(50% - 3px);
   overflow-y: hidden;
 
+  @media only screen and (max-width: 600px) {
+    height: calc(50% - 3px);
+  }
+
   p {
     margin: 2%;
     font-size: calc(0.65em + 1.5vw);
@@ -69,7 +73,7 @@
   text-align: center;
 
   @media only screen and (max-width: 600px) {
-    height: 60%;
+    height: 50%;
   }
 
   p {

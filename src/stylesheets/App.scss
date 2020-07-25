@@ -3,6 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
 
 body {
+  overflow-y: hidden;
   font-family: 'Overpass', sans-serif;
   background-color: black;
   color: white;
@@ -16,6 +17,8 @@ body {
 }
 
 h1 {
+  padding-top: 20%;
+  margin: 0;
   font-family: 'Permanent Marker', cursive;
   font-size: calc(2em + 5em);
 
@@ -62,8 +65,7 @@ button:hover, .clicked {
   background-color: white;
 } 
 
-.app {
-  margin-top: 20vh;
+.main-menu {
   text-align: center;
 
   p {
