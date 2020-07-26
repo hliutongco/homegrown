@@ -41,7 +41,13 @@ module.exports = [
     bg: "/stars.jpg"
   },
   {
-    text2: "That may be the case. But we can’t take any risks anymore. There are rogue bot attacks all over the country now, and the death toll seems to be growing every year.",
+    text2: "That may be the case. But we can’t take any risks anymore.",
+    speaker: "Daniel",
+    text: "Daniel doesn’t look at me. His voice is a low, steady rumble.",
+    bg: "/stars.jpg"
+  },    
+  {
+    text2: "There are rogue bot attacks all over the country now, and the death toll seems to be growing every year.",
     speaker: "Daniel",
     text: "Daniel doesn’t look at me. His voice is a low, steady rumble.",
     bg: "/stars.jpg"

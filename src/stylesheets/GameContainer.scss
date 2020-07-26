@@ -2,6 +2,18 @@
   position: relative;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
+
+  &>span {
+    font-size: calc(0.7em + 0.7em);
+
+    @media only screen and (max-width: 1200px) {
+      font-size: calc(0.5em + 0.5em);
+    }  
+    
+    @media only screen and (max-width: 600px) {
+      font-size: calc(0.4em + 0.4em);
+    }
+  }
 }
 
 .quote::before {
@@ -65,7 +77,19 @@
 
   p {
     margin: 2%;
-    font-size: calc(0.65em + 1.5vw);
+    font-size: calc(1em + 1em);
+
+    @media only screen and (max-width: 1200px) {
+      font-size: calc(0.8em + 0.8em);
+    }
+
+    @media only screen and (max-width: 600px) {
+      font-size: calc(0.6em + 0.6em);
+    }
+
+    @media only screen and (max-width: 360px) {
+      font-size: calc(0.4em + 0.4em);
+    }
   }
 }
 
@@ -82,13 +106,21 @@
     align-items: center;
     justify-content: center;
     margin: 0;
-    padding: 5% 15% 0 15%;
-    height: 60%;
+    padding:3% 15% 0 15%;
+    height: 65%;
     width: 70%;
-    font-size: calc(0.7em + 1vw);
-  }
+    font-size: calc(0.9em + 0.9em);
 
-  span {
-    font-size: calc(0.7em + 0.75vw);
+    @media only screen and (max-width: 1200px) {
+      font-size: calc(0.7em + 0.8em);
+    }  
+    
+    @media only screen and (max-width: 600px) {
+      font-size: calc(0.5em + 0.5em);
+    }
+
+    @media only screen and (max-width: 360px) {
+      font-size: calc(0.4em + 0.4em);
+    }
   }
 }

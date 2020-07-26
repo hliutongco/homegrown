@@ -41,7 +41,11 @@ module.exports = [
     bg: "/carnival.jpg"
   },
   {
-    text: "The magic show begins. As the magician sets up his first trick, I walk across the stage and distract the audience. I scan the growing crowd, but I don’t see Mark. The first trick is a success. The audience claps and cheers.",
+    text: "The magic show begins. As the magician sets up his first trick, I walk across the stage and distract the audience. I scan the growing crowd, but I don’t see Mark.",
+    bg: "/carnival.jpg"
+  }, 
+  {
+    text: "The first trick is a success. The audience claps and cheers.",
     bg: "/carnival.jpg"
   },
   {
