@@ -9,7 +9,7 @@ export default function Modal({body, toggleOpen, handleSubmit}) {
           {body}
         </div>
         <div className="footer">
-          <button onClick={handleSubmit}>Continue</button>
+          <button onClick={handleSubmit}>Confirm</button>
           <span className="divider"></span>
           <button onClick={() => toggleOpen(false)}>Cancel</button>
         </div>

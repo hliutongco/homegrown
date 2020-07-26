@@ -49,15 +49,15 @@ button {
   padding: 0.7% 1.5%;
 
   @media only screen and (max-width: 1200px) {
-    width: calc(10% + 1%);
+    width: 18%;
     line-height: 2;
     font-size: calc(0.8em + 0.7vw);
   }
 
   @media only screen and (max-width: 600px) {
-    width: calc(15% + 1%);
+    width: 23%;
     line-height: 2.25;
-    font-size: calc(0.7em + 0.7vw);
+    font-size: calc(0.7em + 0.5vw);
   }
 }
 
@@ -88,6 +88,10 @@ button:hover {
       font-size: calc(0.3em + 0.5em);
     }
   }
+}
+
+.app > div {
+  height: 100%;
 }
 
 .divider {

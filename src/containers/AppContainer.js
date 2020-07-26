@@ -3,6 +3,7 @@ import GameContainer from './GameContainer';
 import Menu from '../components/Menu';
 import {tableOfContents} from '../scripts/tableOfContents';
 import {increaseLine, decreaseLine, completeLine} from '../actions';
+import { useSwipeable } from 'react-swipeable';
 
 export const ChapContext = createContext()
 const initialState = {chapter: 0, line: 0, keycode: null}
@@ -59,7 +60,13 @@ const handleKeypress = (code, dispatch) => {
 }
 
 export default function AppContainer() {
-  const [state, dispatch] = useReducer(reducer, initialState)
+  const [state, dispatch] = useReducer(reducer, initialState);
+  
+  const handlers = useSwipeable({ 
+    onSwipedLeft: () => dispatch(increaseLine), 
+    onSwipedRight: () => dispatch(decreaseLine),
+    onSwipedDown: () => dispatch(completeLine)
+  })
   
   useEffect(() => {
     document.addEventListener('keyup', (event) => handleKeypress(event.code, dispatch))
@@ -67,8 +74,10 @@ export default function AppContainer() {
 
   return (
     <ChapContext.Provider value={[state, dispatch]}>
-      <GameContainer/>
-      <Menu/>
+      <div {...handlers}>
+        <GameContainer/>
+        <Menu/>
+      </div>
     </ChapContext.Provider>
   );
 }
