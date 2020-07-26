@@ -41,6 +41,9 @@ const reducer = (state, action) => {
       return decreaseLineHandler(state)
     case "completeLine":
       return {...state,  keycode: "ArrowDown"}
+    case "skipChapter":
+      const newObj = {chapter: action.data, line: 0, keycode: "ArrowRight"}
+      return {...state, ...newObj}
     default:
       return state;
   }
@@ -73,7 +76,7 @@ export default function AppContainer() {
   }, []);
 
   return (
-    <ChapContext.Provider value={[state, dispatch]}>
+    <ChapContext.Provider value={{state: state, dispatch: dispatch}}>
       <div {...handlers}>
         <GameContainer/>
         <Menu/>

@@ -1,5 +1,6 @@
 import React, {useState, useContext} from 'react';
 import MusicPlayer from './MusicPlayer'
+import SkipModal from './SkipModal'
 import Modal from './Modal'
 import {MenuContext} from '../App';
 import '../stylesheets/Menu.scss'
@@ -25,7 +26,7 @@ export default function Menu(){
       <div id="menu-instructions" className={showInstructions ? "blinking" : "hidden"}>click above to expand/collapse menu</div>
       <div id="menu-container">
         <div id="menu">
-          <button className={openMenu ? "" : "hidden"}>Skip</button>
+          <button onClick={() => toggleSkipModal(true)} className={openMenu ? "" : "hidden"}>Skip</button>
           <span className="divider"></span>
           <button onClick={handleClick} className={openMenu ? "clicked" : "unclicked"}>Menu</button>
           <span className="divider"></span>
@@ -43,8 +44,8 @@ export default function Menu(){
           </div> 
         </div>
       </div>
-      {showExitModal ? <Modal body={exitBody} toggleOpen={toggleExitModal} handleSubmit={() => toggleDisplay(false)} /> : ""}
-      {showSkipModal ? <Modal toggleOpen={toggleSkipModal} /> : ""}
+      {showExitModal ? <Modal body={exitBody} toggleOpen={toggleExitModal} handleSubmit={() => toggleDisplay(false)} /> : null}
+      {showSkipModal ? <SkipModal toggleSkipModal={toggleSkipModal} /> : null}
     </>
   )
 }

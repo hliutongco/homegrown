@@ -8,7 +8,7 @@ import {increaseLine} from '../actions';
 import {chapterTitles} from '../scripts/tableOfContents';
 
 export default function GameContainer() {
-  const [state, dispatch] = useContext(ChapContext);
+  const {state, dispatch} = useContext(ChapContext);
   const scriptObj = tableOfContents[state.chapter][state.line]
   const chapterTitle = chapterTitles[state.chapter]
   
