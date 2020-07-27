@@ -14,8 +14,6 @@ export default function UpperContainer({id, scriptObj}){
   useEffect(() => {
     ref.current = bg
   }, [bg])
-  console.log(ref.current);
-  console.log(bg);
   
   return (
     <div className={bg !== ref.current ? "fade-in" : ""} style={bgStyling} id="upper-container">

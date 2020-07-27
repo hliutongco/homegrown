@@ -74,23 +74,23 @@
 
 #controls {
   font-family: 'Bebas Neue', cursive;
-  font-size: calc(0.5em + 0.6vw);
+  font-size: calc(0.6em + 0.6em);
   position: absolute;
   bottom: 1vh; right: 1vw;
   text-align: right;
 
   @media only screen and (max-width: 1200px) {
+    font-size: calc(0.5em + 0.5em);
     position: relative;
-    font-size: calc(0.8em + 0.6vw);
   }
 
   @media only screen and (max-width: 600px) {
-    font-size: calc(0.7em + 0.6vw);
+    font-size: calc(0.4em + 0.4em);
     margin-bottom: 0;
   }
 
   @media only screen and (max-width: 340px) {
-    font-size: calc(0.6em + 0.6vw);
+    font-size: calc(0.3em + 0.3em);
   }
 
   span {
@@ -112,7 +112,7 @@
 
 .player-container {
   font-family: 'Bebas Neue', cursive;
-  font-size: calc(0.5em + 0.6vw);
+  font-size: calc(0.6em + 0.6em);
   position: absolute;
   bottom: 1vh; left: 1vw;
   text-align: left;
@@ -127,8 +127,8 @@
   }
 
   @media only screen and (max-width: 1200px) {
+    font-size: calc(0.5em + 0.5em);
     position: relative;
-    font-size: calc(0.8em + 0.6vw);
     padding-top: 1vh;
 
     span {
@@ -138,7 +138,7 @@
   }
 
   @media only screen and (max-width: 600px) {
-    font-size: calc(0.6em + 0.6vw);
+    font-size: calc(0.3em + 0.4em);
     display: flex;
     flex-direction: column;
     margin-bottom: 0;
@@ -153,6 +153,10 @@
         content: " — ";
       }
     }
+  }
+
+  @media only screen and (max-width: 360px) {
+    font-size: calc(0.3em + 0.3em);
   }
 
   .btn-container {
@@ -187,11 +191,6 @@
     &.pause {
       color: #fff;
       background-color: #000;
-    }
-    
-    @media only screen and (max-width: 600px) {
-      content: "test";
-
     }
 
     @media only screen and (min-width: 600px) {

@@ -9,13 +9,34 @@ const exitBody = (
   <h2>Are you sure you want to exit the game?</h2>
 )
 
+
 export default function Menu(){
   let [openMenu, toggleMenu] = useState(false)
   let [showInstructions, toggleInstructions] = useState(true)
   let [showExitModal, toggleExitModal] = useState(false)
   let [showSkipModal, toggleSkipModal] = useState(false)
   let toggleDisplay = useContext(MenuContext)
-
+  
+  const controlsText = () => {
+    if(('ontouchstart' in window) || (navigator.MaxTouchPoints > 0) || (navigator.msMaxTouchPoints > 0)) {
+      return (
+        <>
+          Next — Left Swipe<br/>
+          Previous — Right Swipe<br/>
+          Quick Complete — Down Swipe
+        </>
+      )
+    } else {
+      return (
+        <>
+          Next — Right Arrow / Click<br/>
+          Previous — Left Arrow <br/>
+          Quick Complete — Down Arrow
+        </>
+      )
+    }      
+  }
+  
   const handleClick = () => {
     if(showInstructions) toggleInstructions(false);
     toggleMenu(!openMenu)
@@ -36,11 +57,7 @@ export default function Menu(){
           <MusicPlayer/>
           <div id="controls">
             <span>Controls</span>
-            <p>
-              Next — Right Arrow / Click<br/>
-              Previous — Left Arrow <br/>
-              Quick Complete — Down Arrow
-            </p>
+            <p>{controlsText()}</p>
           </div> 
         </div>
       </div>
