@@ -53,7 +53,7 @@ export default function Menu(){
           <span className="divider"></span>
           <button onClick={() => toggleExitModal(true)} className={openMenu ? "start-top top-disappear" : "hidden start-bottom bottom-disappear"}>Exit</button>
         </div>
-        <div className={openMenu ? "open-menu top-disappear" : "hidden bottom-disappear"}>
+        <div className={openMenu ? "open-menu top-disappear" : "open-menu hidden bottom-disappear"}>
           <MusicPlayer/>
           <div id="controls">
             <span>Controls</span>

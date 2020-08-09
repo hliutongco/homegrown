@@ -209,6 +209,10 @@
   }
 }
 
-.hidden{
+.hidden {
   visibility: hidden;
+
+  &.open-menu {
+    transition: visibility 0.25s;
+  }
 }

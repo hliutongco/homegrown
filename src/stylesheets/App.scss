@@ -119,9 +119,9 @@ button {
 }
 
 .bottom-disappear {
-  opacity: 1;
+  opacity: 0;
   animation-name: fadeOutOpacity;
-  animation-timing-function: ease-in;
+  animation-timing-function: ease-out;
   animation-duration: 0.25s;
 }
 
