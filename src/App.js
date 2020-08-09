@@ -7,7 +7,7 @@ function App() {
   let [displayGame, toggleDisplay] = useState(false)
   const [dimensions, setDimensions] = useState({
     width: window.innerWidth,
-    height: window.innerHeight,
+    height: window.innerHeight
   })
 
   useEffect(() => {
@@ -16,9 +16,9 @@ function App() {
         width: window.innerWidth,
         height: window.innerHeight,
       })
-    }
-    window.addEventListener('resize', handleResize)
-    return () => { window.removeEventListener('resize', handleResize) }
+    };
+    window.addEventListener('resize', handleResize);
+    return () => { window.removeEventListener('resize', handleResize) };
   }, [])
 
   const menu = (

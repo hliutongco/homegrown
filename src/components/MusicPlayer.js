@@ -1,4 +1,30 @@
 import React, {useState, useRef} from 'react';
+import {storage} from '../firebaseConfig'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPlay, faPause, faAngleDoubleLeft, faAngleDoubleRight } from '@fortawesome/free-solid-svg-icons'
+
+const audioInfo = [
+  {title: "Woodfire by the Lake", artist: "Alejandro Magaña", name: "01.mp3"},
+  {title: "Stylz", artist: "Ahjay Stelino", name: "02.mp3"},
+  {title: "Rebel Wayz", artist: "Arulo", name: "03.mp3"},
+  {title: "New Bass", artist: "Lily J", name: "04.mp3"}
+]
+
+const addAudioURL = async (audioObj) => {
+  const fileName = audioObj.name
+  try {
+    const url = await storage.ref( `/music/${fileName}` ).getDownloadURL()
+    audioObj.url = url
+  } catch {
+    console.error("There was an error fetching the music")
+    audioObj.url = null
+  }
+}
+
+const fullAudioInfo = audioInfo.map((audioObj) => {
+  addAudioURL(audioObj)
+  return audioObj
+})
 
 export default function MusicPlayer(){
   let audioPlayer = useRef(null);
@@ -8,7 +34,7 @@ export default function MusicPlayer(){
   const handleAudioChange = (audioIndex) => {
     if(pauseState) return;
 
-    if(audioIndex >= audioArray.length){
+    if(audioIndex >= fullAudioInfo.length){
       changeAudioIndex(0)
     } else if(audioIndex < 0) {
       changeAudioIndex(3)
@@ -22,26 +48,19 @@ export default function MusicPlayer(){
     pauseState ? audioPlayer.current.play() : audioPlayer.current.pause()
   }
 
-  const audioArray = [
-    {title: "Woodfire by the Lake", artist: "Alejandro Magaña", mp3: "./01.mp3"},
-    {title: "Stylz", artist: "Ahjay Stelino", mp3: "./02.mp3"},
-    {title: "Rebel Wayz", artist: "Arulo", mp3: "./03.mp3"},
-    {title: "New Bass", artist: "Lily J", mp3: "./04.mp3"}
-  ]
-
-  const currentSong = audioArray[audioIndex];
+  const currentSong = fullAudioInfo[audioIndex];
 
   return (
     <div className="player-container">
       <div className="btn-container">
         <span onClick={() => handleAudioChange(audioIndex - 1)} className={pauseState ? 'disabled' : ''}>
-          ⇦
+          <FontAwesomeIcon icon={faAngleDoubleLeft} />
         </span>
         <span id="music-controls" onClick={handleTogglePause} className={pauseState ? 'pause' : ''}>
-          {pauseState ? `➤` : `❚❚` }
+          {pauseState ? <FontAwesomeIcon icon={faPlay} /> : <FontAwesomeIcon icon={faPause} /> }
         </span>
         <span onClick={() => handleAudioChange(audioIndex + 1)} className={pauseState ? 'disabled' : ''}>
-          ⇨
+          <FontAwesomeIcon icon={faAngleDoubleRight} />
         </span>
       </div>
       <span>
@@ -50,9 +69,9 @@ export default function MusicPlayer(){
       </span>
       <audio
         ref={audioPlayer}
-        src={currentSong.mp3}
+        src={currentSong.url}
         onEnded={() => handleAudioChange(audioIndex + 1)}
-        hidden autoPlay
+        hidden autoPlay preload="true"
       />
     </div>
   )

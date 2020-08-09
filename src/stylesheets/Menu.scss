@@ -9,15 +9,16 @@
   margin-right: 0.5em;
   text-align: center;
   justify-content: center;
+  align-items: center;
 
   @media only screen and (max-width: 600px) {
-    height: calc(1.2em + 1.2em);
+    height: calc(1.5em + 1.5em);
     width: calc(1.5em + 1.5em);
     line-height: 2.25;
   }
   
   @media only screen and (max-width: 340px) {
-    height: calc(1em + 1.3em);
+    height: calc(1.3em + 1.3em);
     width: calc(1.3em + 1.3em);
     line-height: 2.25;
   }
@@ -36,7 +37,7 @@
 
 #menu {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   @media only screen and (max-width: 1200px) {
     text-align: center;
@@ -145,7 +146,7 @@
 
     span {
       flex-direction: row;
-      padding-top: 5px;
+      margin-top: 5px;
       justify-content: flex-start;
       
 

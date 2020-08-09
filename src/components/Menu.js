@@ -47,13 +47,13 @@ export default function Menu(){
       <div id="menu-instructions" className={showInstructions ? "blinking" : "hidden"}>click above to expand/collapse menu</div>
       <div id="menu-container">
         <div id="menu">
-          <button onClick={() => toggleSkipModal(true)} className={openMenu ? "" : "hidden"}>Skip</button>
+          <button onClick={() => toggleSkipModal(true)} className={openMenu ? "start-top top-disappear" : "hidden start-bottom bottom-disappear"}>Skip</button>
           <span className="divider"></span>
-          <button onClick={handleClick} className={openMenu ? "clicked" : "unclicked"}>Menu</button>
+          <button onClick={handleClick} className={openMenu ? "clicked start-top" : "unclicked start-bottom"}>Menu</button>
           <span className="divider"></span>
-          <button onClick={() => toggleExitModal(true)} className={openMenu ? "" : "hidden"}>Exit</button>
+          <button onClick={() => toggleExitModal(true)} className={openMenu ? "start-top top-disappear" : "hidden start-bottom bottom-disappear"}>Exit</button>
         </div>
-        <div className={openMenu ? "open-menu" : "hidden"}>
+        <div className={openMenu ? "open-menu top-disappear" : "hidden bottom-disappear"}>
           <MusicPlayer/>
           <div id="controls">
             <span>Controls</span>

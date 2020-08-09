@@ -79,18 +79,57 @@ button {
   background-color: white;
 } 
 
+.start-top {
+  transition-duration: 0.25s;
+  @media only screen and (max-width: 1200px) {
+    transform: translateY(0%);
+  }
+}
+
+@keyframes fadeInOpacity {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.top-disappear {
+  opacity: 1;
+  animation-name: fadeInOpacity;
+  animation-timing-function: ease-in;
+  animation-duration: 0.25s;
+}
+
+.start-bottom {
+  transition-duration: 0.25s;
+  @media only screen and (max-width: 1200px) {
+    transform: translateY(90%);
+  }
+}
+
+@keyframes fadeOutOpacity {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.bottom-disappear {
+  opacity: 1;
+  animation-name: fadeOutOpacity;
+  animation-timing-function: ease-in;
+  animation-duration: 0.25s;
+}
+
 button:hover {
   @media only screen and (min-width: 600px) {
     color: black;
     background-color: white;
   }
-}
-
-.unclicked {
-  @media only screen and (max-width: 1200px) {
-    position: absolute;
-    bottom: 5%;
-  }  
 }
 
 .main-menu {
