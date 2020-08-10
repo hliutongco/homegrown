@@ -1,10 +1,10 @@
 import React, {useState, useEffect, createContext} from 'react';
 import './stylesheets/App.scss';
 import AppContainer from './containers/AppContainer';
-export const MenuContext = createContext()
+export const GameDisplayContext = createContext()
 
 function App() {
-  let [displayGame, toggleDisplay] = useState(false)
+  let [displayGame, toggleGameDisplay] = useState(false)
   const [dimensions, setDimensions] = useState({
     width: window.innerWidth,
     height: window.innerHeight
@@ -25,7 +25,7 @@ function App() {
     <div className="main-menu">
       <h1>Homegrown</h1>
       <p>an audio/visual tale of (in)organic people</p>
-      <button onClick={() => toggleDisplay(true)}>Start</button>
+      <button onClick={() => toggleGameDisplay(true)}>Start</button>
     </div>
   )
 
@@ -39,9 +39,9 @@ function App() {
       {
         displayGame 
         ? 
-        <MenuContext.Provider value={toggleDisplay}>
+        <GameDisplayContext.Provider value={toggleGameDisplay}>
           <AppContainer/>
-        </MenuContext.Provider>
+        </GameDisplayContext.Provider>
         : 
         menu
       }

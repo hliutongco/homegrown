@@ -1,18 +1,20 @@
 import React, {createContext, useEffect, useReducer} from 'react';
 import GameContainer from './GameContainer';
 import Menu from '../components/Menu';
+import Ending from '../components/Ending';
 import {tableOfContents} from '../scripts/tableOfContents';
 import {increaseLine, decreaseLine, completeLine} from '../actions';
 import { useSwipeable } from 'react-swipeable';
 
 export const ChapContext = createContext()
-const initialState = {chapter: 0, line: 0, keycode: null}
+const initialState = {chapter: 0, line: 0, keycode: null, ending: false}
 
 const increaseLineHandler = (state) => {
   const chapLength = tableOfContents[state.chapter].length
   const newObj = {...state, keycode: "ArrowRight"}
   const newChapObj = {...newObj, chapter: state.chapter + 1, line: 0}
-  const changeChap = state.chapter + 1 < tableOfContents.length ? newChapObj : state
+  const endingObj = {...state, ending: true}
+  const changeChap = state.chapter + 1 < tableOfContents.length ? newChapObj : endingObj
   const changeLine = {...newObj, line: state.line + 1}
 
   return state.line === chapLength - 1 ? changeChap : changeLine
@@ -77,10 +79,15 @@ export default function AppContainer() {
 
   return (
     <ChapContext.Provider value={{state: state, dispatch: dispatch}}>
-      <div {...handlers}>
-        <GameContainer/>
-        <Menu/>
-      </div>
+      {
+        state.ending ?
+          <Ending/>
+        :
+          <div {...handlers}>
+            <GameContainer/>
+            <Menu/>
+          </div>
+      }
     </ChapContext.Provider>
   );
 }
