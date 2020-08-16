@@ -2,7 +2,8 @@ import React, {useState, useContext} from 'react';
 import MusicPlayer from './MusicPlayer'
 import SkipModal from './SkipModal'
 import Modal from './Modal'
-import {GameDisplayContext} from '../App';
+import {transitionEnding} from '../actions';
+import {ChapContext} from '../containers/AppContainer';
 import '../stylesheets/Menu.scss'
 
 const exitBody = (
@@ -14,7 +15,7 @@ export default function Menu(){
   let [showInstructions, toggleInstructions] = useState(true)
   let [showExitModal, toggleExitModal] = useState(false)
   let [showSkipModal, toggleSkipModal] = useState(false)
-  let {toggleGameDisplay} = useContext(GameDisplayContext)
+  let {dispatch} = useContext(ChapContext)
   
   const controlsText = () => {
     if(('ontouchstart' in window) || (navigator.MaxTouchPoints > 0) || (navigator.msMaxTouchPoints > 0)) {
@@ -60,7 +61,7 @@ export default function Menu(){
           </div> 
         </div>
       </div>
-      {showExitModal ? <Modal body={exitBody} toggleOpen={toggleExitModal} handleSubmit={() => toggleGameDisplay(false)} /> : null}
+      {showExitModal ? <Modal body={exitBody} toggleOpen={toggleExitModal} handleSubmit={() => dispatch(transitionEnding)} /> : null}
       {showSkipModal ? <SkipModal toggleSkipModal={toggleSkipModal} /> : null}
     </>
   )

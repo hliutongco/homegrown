@@ -150,3 +150,12 @@ button:hover {
   width: 1vw;
   display: inline-block;
 }
+
+.ending-transition {
+  position: fixed;
+  top: 0; left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #000;
+  z-index: 2;
+}

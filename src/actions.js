@@ -16,3 +16,15 @@ export const skipChapter = (savedIndex) => {
     data: savedIndex
   }
 }
+
+export const ending = {
+  type: "ending"
+}
+
+export const transitionEnding = {
+  type: "transitionEnding"
+}
+
+export const clearTransitionEnding = {
+  type: "clearTransitionEnding"
+}

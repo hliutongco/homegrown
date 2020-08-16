@@ -2,18 +2,19 @@ import React, {createContext, useEffect, useReducer} from 'react';
 import GameContainer from './GameContainer';
 import Menu from '../components/Menu';
 import Ending from '../components/Ending';
+import EndingTransition from '../components/EndingTransition';
 import {tableOfContents} from '../scripts/tableOfContents';
 import {increaseLine, decreaseLine, completeLine} from '../actions';
 import { useSwipeable } from 'react-swipeable';
 
 export const ChapContext = createContext()
-const initialState = {chapter: 0, line: 0, keycode: null, ending: false}
+const initialState = {chapter: 0, line: 0, keycode: null, ending: false, transitionEnding: null}
 
 const increaseLineHandler = (state) => {
   const chapLength = tableOfContents[state.chapter].length
   const newObj = {...state, keycode: "ArrowRight"}
   const newChapObj = {...newObj, chapter: state.chapter + 1, line: 0}
-  const endingObj = {...state, ending: true}
+  const endingObj = {...state, transitionEnding: "ending"}
   const changeChap = state.chapter + 1 < tableOfContents.length ? newChapObj : endingObj
   const changeLine = {...newObj, line: state.line + 1}
 
@@ -46,6 +47,12 @@ const reducer = (state, action) => {
     case "skipChapter":
       const newObj = {chapter: action.data, line: 0, keycode: "ArrowRight"}
       return {...state, ...newObj}
+    case "ending":
+      return {...state, ending: true}
+    case "transitionEnding":
+      return {...state, transitionEnding: "quitGame"}
+    case "clearTransitionEnding":
+      return {...state, transitionEnding: null}
     default:
       return state;
   }
@@ -86,6 +93,7 @@ export default function AppContainer() {
           <div {...handlers}>
             <GameContainer/>
             <Menu/>
+            <EndingTransition/>
           </div>
       }
     </ChapContext.Provider>

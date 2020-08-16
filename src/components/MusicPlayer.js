@@ -1,4 +1,5 @@
-import React, {useState, useRef} from 'react';
+import React, {useState, useRef, useContext, useEffect} from 'react';
+import {ChapContext} from '../containers/AppContainer';
 import { storage } from '../firebaseConfig'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlay, faPause, faAngleDoubleLeft, faAngleDoubleRight } from '@fortawesome/free-solid-svg-icons'
@@ -27,9 +28,27 @@ const fullAudioInfo = audioInfo.map((audioObj) => {
 })
 
 export default function MusicPlayer(){
+  const {state} = useContext(ChapContext);
   let audioPlayer = useRef(null);
   let [pauseState, togglePause] = useState(false)
   let [audioIndex, changeAudioIndex] = useState(0)
+
+  useEffect(() => {
+    if(state.transitionEnding){
+      const fadeMusic = () => {
+        const fadeAudio = setInterval(() => {
+          if (audioPlayer.current && audioPlayer.current.volume > 0.1) {
+            audioPlayer.current.volume -= 0.1;
+          }
+          else {
+            clearInterval(fadeAudio);
+          }
+        }, 100);
+      }
+      fadeMusic();
+    }
+
+  }, [state.transitionEnding])
 
   const handleAudioChange = (audioIndex) => {
     if(pauseState) return;
