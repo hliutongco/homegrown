@@ -1,0 +1,51 @@
+.ending-container {
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+
+.ending {
+  margin: 10vh 0;
+  text-align: center;
+
+  a {
+    color: #93dba6;
+  }
+
+  p {
+    margin: 5vh 10vw;
+  }
+
+  h2 {
+    font-size: calc(2em + 1em);
+
+
+    @media only screen and (max-width: 1200px) {
+      font-size: calc(1.5em + 1em);
+    }
+
+    @media only screen and (max-width: 600px) {
+      font-size: calc(1.25em + 0.5em);
+    }
+  }
+
+  div {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 2em;
+
+    img {
+      width: 20vw;
+      height: 500px;
+      object-fit: cover;
+    
+      &:hover {
+        opacity: 0.80;
+      }
+
+      @media only screen and (max-width: 900px) {
+        width: 100vw;
+        height: 200px;
+      }
+    }
+  }
+}

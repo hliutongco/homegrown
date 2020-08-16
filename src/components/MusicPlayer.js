@@ -1,5 +1,5 @@
 import React, {useState, useRef} from 'react';
-import {storage} from '../firebaseConfig'
+import { storage } from '../firebaseConfig'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlay, faPause, faAngleDoubleLeft, faAngleDoubleRight } from '@fortawesome/free-solid-svg-icons'
 
@@ -10,7 +10,7 @@ const audioInfo = [
   {title: "New Bass", artist: "Lily J", name: "04.mp3"}
 ]
 
-const addAudioURL = async (audioObj) => {
+const getAudioURL = async (audioObj) => {
   const fileName = audioObj.name
   try {
     const url = await storage.ref( `/music/${fileName}` ).getDownloadURL()
@@ -22,7 +22,7 @@ const addAudioURL = async (audioObj) => {
 }
 
 const fullAudioInfo = audioInfo.map((audioObj) => {
-  addAudioURL(audioObj)
+  getAudioURL(audioObj)
   return audioObj
 })
 
