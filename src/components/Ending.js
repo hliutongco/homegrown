@@ -1,26 +1,9 @@
-import React, {useContext, useState, useEffect} from 'react';
+import React, {useContext} from 'react';
 import {GameDisplayContext} from '../App';
-import { storage } from '../firebaseConfig'
 import '../stylesheets/Ending.scss';
 
 export default function Ending() {
-  let toggleGameDisplay = useContext(GameDisplayContext);
-  let [imageURLs, addURLs] = useState([]);
-  
-  useEffect(() => {
-    const getImageURLs = async () => {
-      const getURL = (fileName) => storage.ref( `/images/${fileName}` ).getDownloadURL()
-      const urls = await Promise.all([
-        getURL("small-town.jpg"), 
-        getURL("community-center.jpeg"),
-        getURL("apartment.jpg"),
-        getURL("carnival.jpg"),
-        getURL("stars.jpg")
-      ])
-      addURLs(urls);
-    }
-    getImageURLs();
-  }, [])
+  let {toggleGameDisplay, imageObjs} = useContext(GameDisplayContext);
 
   return (
     <div className="ending-container">
@@ -31,10 +14,10 @@ export default function Ending() {
         </p>
         <div>
           {
-            imageURLs.map((imageURL, index) => {
+            imageObjs.map((imageObj, index) => {
               return (
-                <a key={index} href={imageURL} target="_blank" rel="noopener noreferrer">
-                  <img src={imageURL} alt="ezemenendez artwork"/>
+                <a key={index} href={imageObj.url} target="_blank" rel="noopener noreferrer">
+                  <img src={imageObj.url} alt={imageObj.name}/>
                 </a>
               )
             })

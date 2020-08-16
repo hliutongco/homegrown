@@ -10,81 +10,81 @@ module.exports = [
   },
   {
     text: "I open my eyes and the first thing I see are the stars. I’m still wearing my stage outfit, and I can feel gravel scratching against my naked back. When I look down, I see that my legs have been torn off.",
-    bg: "/stars.jpg"
+    bg: "stars.jpg"
   },
   {
     text: "My wrists are clamped together in an iron brace, one too thick for me to break. Daniel is dragging me along Central Avenue, towards Crown Square. I remember that he was the one who dismantled Jenny, as well.",
-    bg: "/stars.jpg"
+    bg: "stars.jpg"
   },
   {
     text2: "Wait. Daniel, please don’t.",
     speaker: "Suzie",
-    bg: "/stars.jpg"
+    bg: "stars.jpg"
   },
   {
     text2: "I’m not like Jenny or any of the worker bots. I was made in America.",
     speaker: "Suzie",
-    bg: "/stars.jpg"
+    bg: "stars.jpg"
   },  
   {
     text2: "My creator built me by hand, in a small lab in Alabama. I was created to be his companion, which I was until he passed.",
     speaker: "Suzie",
-    bg: "/stars.jpg"
+    bg: "stars.jpg"
   },  
   {
     text2: "I wasn’t made to do labor. I didn’t do anything wrong.",
     speaker: "Suzie",
-    bg: "/stars.jpg"
+    bg: "stars.jpg"
   },
   {
     text: "Daniel doesn’t look at me. His voice is a low, steady rumble.",
-    bg: "/stars.jpg"
+    bg: "stars.jpg"
   },
   {
     text2: "That may be the case. But we can’t take any risks anymore.",
     speaker: "Daniel",
     text: "Daniel doesn’t look at me. His voice is a low, steady rumble.",
-    bg: "/stars.jpg"
+    bg: "stars.jpg"
   },    
   {
     text2: "There are rogue bot attacks all over the country now, and the death toll seems to be growing every year.",
     speaker: "Daniel",
     text: "Daniel doesn’t look at me. His voice is a low, steady rumble.",
-    bg: "/stars.jpg"
+    bg: "stars.jpg"
   },  
   {
     text2: "That’s our reality. We all have a place in this world, and it’s our job to know what it is.",
     speaker: "Daniel",
     text: "Daniel doesn’t look at me. His voice is a low, steady rumble.",
-    bg: "/stars.jpg"
+    bg: "stars.jpg"
   },
   {
     text2: "You might not be a worker. Hell, you might even be an American. But you’re still a machine.",
     speaker: "Daniel",
     text: "Daniel doesn’t look at me. His voice is a low, steady rumble.",
-    bg: "/stars.jpg"
+    bg: "stars.jpg"
   },
   {
     text: "In a quieter voice, he adds,",
-    bg: "/stars.jpg"
+    bg: "stars.jpg"
   },
   {
     text2: "I’m sorry.",
     speaker: "Daniel",
     text: "In a quieter voice, he adds,",
-    bg: "/stars.jpg"
+    bg: "stars.jpg"
   },
   {
     text: "I say nothing in response. The streets around us are empty. I can still hear the carnival music in the distance.",
-    bg: "/stars.jpg"
+    bg: "stars.jpg"
   },
   {
     text: "Daniel strings me up to the top of the lamppost opposite from Jenny, and then he uses his welding tools to fuse my back to the front of the post. He was kind enough to switch my tactile sensors to their lowest settings, yet it still burns worse than any pain I’ve ever known.",
-    bg: "/stars.jpg"
+    bg: "stars.jpg"
   },
   {
     text: "Then Daniel leaves, and only Jenny and I are left.",
-    bg: "/stars.jpg"
+    bg: "stars.jpg"
   },
   {
     text: "I observe Silver Springs from my perch. When my reserve energy runs out, Daniel gives me a fresh battery so that I will live a few years longer. Despite everything, I feel grateful."

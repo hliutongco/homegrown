@@ -1,10 +1,15 @@
-import React, {useEffect, useRef} from 'react';
+import React, {useEffect, useRef, useContext} from 'react';
+import {GameDisplayContext} from '../App';
 import SecondaryScript from '../components/SecondaryScript'
 
 export default function UpperContainer({id, scriptObj}){
-  const {text2, type, speaker, bg = null} = scriptObj
+  let {imageObjs} = useContext(GameDisplayContext);
+
+  const {text2, type, speaker, bg} = scriptObj;
+  const bgObj = imageObjs.find(imageObj => imageObj.name === bg)
+  const bgURL = bgObj ? bgObj.url : null;
   const bgStyling = {
-    backgroundImage: 'url(' + bg + ')',
+    backgroundImage: 'url(' + bgURL + ')',
     backgroundSize: 'cover',
     backgroundPosition: 'center',
     backgroundRepeat: 'no-repeat'

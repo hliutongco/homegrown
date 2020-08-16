@@ -1,4 +1,5 @@
 import React, {useState, useEffect, createContext} from 'react';
+import { storage } from './firebaseConfig'
 import './stylesheets/App.scss';
 import AppContainer from './containers/AppContainer';
 export const GameDisplayContext = createContext()
@@ -9,6 +10,28 @@ function App() {
     width: window.innerWidth,
     height: window.innerHeight
   })
+  let [imageObjs, addImageObjs] = useState([]);
+  
+  useEffect(() => {
+      const imageObjs = []
+      const getURL = (fileName) => storage.ref( `/images/${fileName}` ).getDownloadURL()
+      const buildImageObj = async (fileName) => {
+        const url = await getURL(fileName); 
+        imageObjs.push({name: fileName, url: url});
+      }
+
+      const fileNames = [
+        "small-town.jpg",
+        "community-center.jpeg",
+        "apartment.jpg",
+        "carnival.jpg",
+        "stars.jpg"
+      ]
+      
+      fileNames.forEach(fileName => buildImageObj(fileName));
+
+      addImageObjs(imageObjs);
+  }, [])
 
   useEffect(() => {
     const handleResize = () => {
@@ -39,7 +62,7 @@ function App() {
       {
         displayGame 
         ? 
-        <GameDisplayContext.Provider value={toggleGameDisplay}>
+        <GameDisplayContext.Provider value={{toggleGameDisplay: toggleGameDisplay, imageObjs: imageObjs}}>
           <AppContainer/>
         </GameDisplayContext.Provider>
         : 

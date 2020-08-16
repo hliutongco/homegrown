@@ -14,7 +14,7 @@ export default function Menu(){
   let [showInstructions, toggleInstructions] = useState(true)
   let [showExitModal, toggleExitModal] = useState(false)
   let [showSkipModal, toggleSkipModal] = useState(false)
-  let toggleGameDisplay = useContext(GameDisplayContext)
+  let {toggleGameDisplay} = useContext(GameDisplayContext)
   
   const controlsText = () => {
     if(('ontouchstart' in window) || (navigator.MaxTouchPoints > 0) || (navigator.msMaxTouchPoints > 0)) {

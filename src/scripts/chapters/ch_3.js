@@ -26,31 +26,31 @@ module.exports = [
   },
   {
     text: "At the carnival, the smell of funnel cakes and popcorn hangs thick in the air. Almost the entire town is here.",
-    bg: "/carnival.jpg"
+    bg: "carnival.jpg"
   },  
   {
     text: "I head to the magic show stage, where the preparations for the first illusion are already underway. The magician is already dressed in his magician’s outfit: a white dress shirt, black slacks, a black wool cape, and a matching top hat. He hands me my stage outfit, which is much more revealing than his.",
-    bg: "/carnival.jpg"
+    bg: "carnival.jpg"
   },
   {
     text: "Once I am dressed, I return to the stage. The warm air presses against my mostly exposed back and legs. I still feel strange.",
-    bg: "/carnival.jpg"
+    bg: "carnival.jpg"
   },
   {
     text: "Mark is not like Jenny or that bot that was on the news this morning. He has not threatened or hurt anyone. Still, his purpose is to do the real labor. If the bots don’t do the labor, then us townspeople will be forced to do it instead, like in the old days. I should tell someone.",
-    bg: "/carnival.jpg"
+    bg: "carnival.jpg"
   },
   {
     text: "The magic show begins. As the magician sets up his first trick, I walk across the stage and distract the audience. I scan the growing crowd, but I don’t see Mark.",
-    bg: "/carnival.jpg"
+    bg: "carnival.jpg"
   }, 
   {
     text: "The first trick is a success. The audience claps and cheers.",
-    bg: "/carnival.jpg"
+    bg: "carnival.jpg"
   },
   {
     text: "I feel strange. There is something wrong.",
-    bg: "/carnival.jpg"
+    bg: "carnival.jpg"
   },
   {
     text: "There is something wrong."
