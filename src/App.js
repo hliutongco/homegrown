@@ -17,19 +17,20 @@ function App() {
       const getURL = (fileName) => storage.ref( `/images/${fileName}` ).getDownloadURL()
       const buildImageObj = async (fileName) => {
         const url = await getURL(fileName); 
-        imageObjs.push({name: fileName, url: url});
+        const img = new Image ();
+        img.onload = () => imageObjs.push({name: fileName, url: url});
+        img.src = url;
       }
 
       const fileNames = [
         "small-town.jpg",
-        "community-center.jpeg",
+        "community-center.jpg",
         "apartment.jpg",
         "carnival.jpg",
         "stars.jpg"
       ]
       
       fileNames.forEach(fileName => buildImageObj(fileName));
-
       addImageObjs(imageObjs);
   }, [])
 

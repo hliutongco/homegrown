@@ -13,7 +13,7 @@ export default function EndingTransition() {
       setTimeout(() => {
         dispatch(clearTransitionEnding)
         dispatch(ending)
-      }, 2500)
+      }, 2000)
     } else if (transitionEnding === "quitGame") {
       setTimeout(() => {
         dispatch(clearTransitionEnding)
