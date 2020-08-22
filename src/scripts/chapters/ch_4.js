@@ -96,7 +96,10 @@ module.exports = [
     text: "Eventually, it dawns on me that the worst part of this is Jenny. Always Jenny. This would be so much more bearable if she weren’t around, rotting right in front of me. Once when Daniel passed by, I pleaded with him to lower her body even just a foot towards the ground, but he didn’t listen."
   },
   {
-    text: "Why did he put me right across from her, and at the same height no less? My body is made from much higher quality materials, but the differences are more difficult to see from this height. It isn’t fair. I hate to think that the townspeople might consider us equals. I am different from her."
+    text: "Why did he put me right across from her, and at the same height no less? My body is made from much higher quality materials, but the differences are more difficult to see from this height. It isn’t fair."
+  },  
+  {
+    text: "I hate to think that the townspeople might consider us equals. I am different from her."
   },
   {
     text: "We are not the same."

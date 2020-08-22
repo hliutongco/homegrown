@@ -1,8 +1,9 @@
-import React, {useState, useEffect, createContext} from 'react';
+import React, {useState, useEffect, createContext, lazy, Suspense } from 'react';
+import Loading from './components/Loading';
 import { storage } from './firebaseConfig'
 import './stylesheets/App.scss';
-import AppContainer from './containers/AppContainer';
 export const GameDisplayContext = createContext()
+const AppContainer = lazy(() => import('./containers/AppContainer'));;
 
 function App() {
   let [displayGame, toggleGameDisplay] = useState(false)
@@ -60,16 +61,18 @@ function App() {
 
   return (
     <div className="app" style={windowSize}>
-      {
-        displayGame 
-        ? 
-        <GameDisplayContext.Provider value={{toggleGameDisplay: toggleGameDisplay, imageObjs: imageObjs}}>
-          <AppContainer/>
-        </GameDisplayContext.Provider>
-        : 
-        menu
-      }
-    </div>
+        {
+          displayGame 
+          ? 
+            <Suspense fallback={<Loading/>}>
+              <GameDisplayContext.Provider value={{toggleGameDisplay: toggleGameDisplay, imageObjs: imageObjs}}>
+                <AppContainer/>
+              </GameDisplayContext.Provider>
+            </Suspense>
+          : 
+          menu
+        }
+      </div>
   );
 }
 
