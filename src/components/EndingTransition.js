@@ -4,7 +4,7 @@ import {ending, clearTransitionEnding} from '../actions';
 import {ChapContext} from '../containers/AppContainer';
 
 export default function EndingTransition() {
-  const {toggleGameDisplay} = useContext(GameDisplayContext);
+  const toggleGameDisplay = useContext(GameDisplayContext);
   const {state, dispatch} = useContext(ChapContext);
   const {transitionEnding} = state;
 

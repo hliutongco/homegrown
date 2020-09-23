@@ -1,6 +1,5 @@
 import React, {useState, useRef, useContext, useEffect} from 'react';
 import {ChapContext} from '../containers/AppContainer';
-import { storage } from '../firebaseConfig'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPlay, faPause, faAngleDoubleLeft, faAngleDoubleRight } from '@fortawesome/free-solid-svg-icons'
 
@@ -10,22 +9,6 @@ const audioInfo = [
   {title: "Rebel Wayz", artist: "Arulo", name: "03.mp3"},
   {title: "New Bass", artist: "Lily J", name: "04.mp3"}
 ]
-
-const getAudioURL = async (audioObj) => {
-  const fileName = audioObj.name
-  try {
-    const url = await storage.ref( `/music/${fileName}` ).getDownloadURL()
-    audioObj.url = url
-  } catch {
-    console.error("There was an error fetching the music")
-    audioObj.url = null
-  }
-}
-
-const fullAudioInfo = audioInfo.map((audioObj) => {
-  getAudioURL(audioObj)
-  return audioObj
-})
 
 export default function MusicPlayer(){
   const {state} = useContext(ChapContext);
@@ -53,7 +36,7 @@ export default function MusicPlayer(){
   const handleAudioChange = (audioIndex) => {
     if(pauseState) return;
 
-    if(audioIndex >= fullAudioInfo.length){
+    if(audioIndex >= audioInfo.length){
       changeAudioIndex(0)
     } else if(audioIndex < 0) {
       changeAudioIndex(3)
@@ -67,7 +50,7 @@ export default function MusicPlayer(){
     pauseState ? audioPlayer.current.play() : audioPlayer.current.pause()
   }
 
-  const currentSong = fullAudioInfo[audioIndex];
+  const currentSong = audioInfo[audioIndex];
 
   return (
     <div className="player-container">
@@ -88,7 +71,7 @@ export default function MusicPlayer(){
       </span>
       <audio
         ref={audioPlayer}
-        src={currentSong.url}
+        src={currentSong.name}
         onEnded={() => handleAudioChange(audioIndex + 1)}
         hidden autoPlay preload="true"
       />

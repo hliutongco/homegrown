@@ -1,6 +1,5 @@
 import React, {useState, useEffect, createContext, lazy, Suspense } from 'react';
 import Loading from './components/Loading';
-import { storage } from './firebaseConfig'
 import './stylesheets/App.scss';
 export const GameDisplayContext = createContext()
 const AppContainer = lazy(() => import('./containers/AppContainer'));;
@@ -11,29 +10,6 @@ function App() {
     width: window.innerWidth,
     height: window.innerHeight
   })
-  let [imageObjs, addImageObjs] = useState([]);
-  
-  useEffect(() => {
-      const imageObjs = []
-      const getURL = (fileName) => storage.ref( `/images/${fileName}` ).getDownloadURL()
-      const buildImageObj = async (fileName) => {
-        const url = await getURL(fileName); 
-        const img = new Image ();
-        img.onload = () => imageObjs.push({name: fileName, url: url});
-        img.src = url;
-      }
-
-      const fileNames = [
-        "small-town.jpg",
-        "community-center.jpg",
-        "apartment.jpg",
-        "carnival.jpg",
-        "stars.jpg"
-      ]
-      
-      fileNames.forEach(fileName => buildImageObj(fileName));
-      addImageObjs(imageObjs);
-  }, [])
 
   useEffect(() => {
     const handleResize = () => {
@@ -65,7 +41,7 @@ function App() {
           displayGame 
           ? 
             <Suspense fallback={<Loading/>}>
-              <GameDisplayContext.Provider value={{toggleGameDisplay: toggleGameDisplay, imageObjs: imageObjs}}>
+              <GameDisplayContext.Provider value={toggleGameDisplay}>
                 <AppContainer/>
               </GameDisplayContext.Provider>
             </Suspense>

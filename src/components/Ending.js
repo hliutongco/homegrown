@@ -2,8 +2,16 @@ import React, {useContext} from 'react';
 import {GameDisplayContext} from '../App';
 import '../stylesheets/Ending.scss';
 
+const images = [
+  "small-town.jpg",
+  "community-center.jpg",
+  "apartment.jpg",
+  "carnival.jpg",
+  "stars.jpg"
+]
+
 export default function Ending() {
-  let {toggleGameDisplay, imageObjs} = useContext(GameDisplayContext);
+  let toggleGameDisplay = useContext(GameDisplayContext);
 
   return (
     <div className="ending-container">
@@ -14,10 +22,10 @@ export default function Ending() {
         </p>
         <div>
           {
-            imageObjs.map((imageObj, index) => {
+            images.map((image, index) => {
               return (
-                <a key={index} href={imageObj.url} target="_blank" rel="noopener noreferrer">
-                  <img src={imageObj.url} alt={imageObj.name}/>
+                <a key={index} href={image} target="_blank" rel="noopener noreferrer">
+                  <img src={image} alt={image}/>
                 </a>
               )
             })
